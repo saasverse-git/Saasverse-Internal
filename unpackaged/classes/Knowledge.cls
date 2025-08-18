@@ -1,4 +1,5 @@
 public class Knowledge {
+    //Comment
     @AuraEnabled(cacheable=true)
     public static KnowledgeResultWrapper getKnowledgeRecords(String recordId) {
         String Brand, Category, ProductLine, reason, description , status;
