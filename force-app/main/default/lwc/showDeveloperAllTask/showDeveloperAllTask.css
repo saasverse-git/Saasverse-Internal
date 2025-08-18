@@ -1,0 +1,96 @@
+.custom-table{
+	height:610px;
+    width: 96vw;
+    padding: 3px;
+    box-sizing: border-box;
+    margin: auto;
+    background-color:#b0b0b0;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+.custom-title{
+	text-align: center;
+	text-decoration: solid;
+	font-size:x-large;
+    margin-bottom: 11px;
+    color: rgb(255, 255, 255);
+    background-color:#898989;
+    width: 95vw;
+    border-radius: 10px;
+	
+}
+
+.custom-div{
+    height: 79vh;
+    width: 100vw;
+    border-radius: 20px;
+    background-color: rgb(254, 254, 254);
+   
+
+}
+:host ::part(base) {
+    border-radius: 16px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+/* .buttonAndInput {
+    display: flex;
+    margin: 0px;
+    margin-left: 0px;
+}
+
+.buttonDiv{
+    align-content: flex-end;
+    margin-top: -13px;
+    margin-right: 15px;
+    margin-bottom: 2px;
+    margin-left: 0px;
+}
+
+.inputDiv{
+    margin-top: -29px;
+    margin-left: 0px;
+}
+
+.downlodaDiv{
+    position: absolute;
+    right: 0;
+    top: -13px; 
+    margin-right: 24px;
+
+    
+}
+
+.buttonDiv2{
+    margin-top: 3rem;
+} */
+
+
+.buttonAndInput {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap; /* So items don't overflow on small screens */
+    gap: 1rem;
+    position: relative;
+    padding-right: 150px; /* To avoid overlapping with absolute download button */
+}
+
+.inputDiv {
+    margin-top: 0; /* clean up margin */
+}
+
+.buttonDiv {
+    margin-top: 0.2rem;
+}
+
+.downlodaDiv {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.buttonDiv2 {
+    margin-top: 1rem; /* Place this where needed */
+}

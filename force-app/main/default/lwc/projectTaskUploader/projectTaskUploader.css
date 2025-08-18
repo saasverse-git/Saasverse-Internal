@@ -1,0 +1,8 @@
+.custom-card {
+    border-radius: 10rem; /* Rounded corners */
+    background-color: #e4efff; /* Light grey background */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional soft shadow */
+    padding: 0rem;
+    height: 8vh;
+    width: 10vw; 
+}

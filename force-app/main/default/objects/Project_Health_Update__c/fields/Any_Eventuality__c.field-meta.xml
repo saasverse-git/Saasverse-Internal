@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Any_Eventuality__c</fullName>
+    <label>Any Eventuality</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Manager Unhappy regarding work</fullName>
+                <default>false</default>
+                <label>Manager Unhappy regarding work</label>
+            </value>
+            <value>
+                <fullName>Manager Unhappy regarding Leave/attentive ness</fullName>
+                <default>false</default>
+                <label>Manager Unhappy regarding Leave/attentive ness</label>
+            </value>
+            <value>
+                <fullName>Project too complex</fullName>
+                <default>false</default>
+                <label>Project too complex</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

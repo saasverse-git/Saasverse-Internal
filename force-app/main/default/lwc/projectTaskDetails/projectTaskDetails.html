@@ -1,0 +1,42 @@
+<template>
+    <template if:true={task}>
+        <div class="chart-divContatiner">
+            <br><br>
+            <h1 class="slds-text-heading_large slds-align_absolute-center"><p><u>{task.Project_Task_Name__c}</u></p></h1> 
+            <br><br>
+            <!-- <h3><b>Developer:</b> {task.Developer_Name__c}</h3> 
+            <h3><b>Description:</b> {task.Projects__r.Description__c}</h3>
+            <h3><b>Status:</b> {task.Current_Task_Status__c}</h3>
+            <h3><b>RAG:</b> {task.RAG__c}</h3>
+            <h3><b>Hours Consumed:</b> {task.Hours_so_Far_consumed__c}</h3>
+            <h3><b>Estimated Effort:</b> {task.Estimated_Effort_in_hrs__c}</h3>
+            -->
+            <div class="slds-grid slds-grid_align-spread slds-p-around_medium">
+                <div class="slds-text-heading_large slds-align_absolute-left">
+                    <strong>Developer:</strong> {task.Developer_Name__c}
+                </div>
+                <div class="slds-text-heading_large slds-align_absolute-right">
+                    <strong>Status:</strong> {task.Current_Task_Status__c}
+                </div>
+                <div class="slds-text-heading_large slds-align_absolute-left">
+                    <strong>RAG:</strong> {task.RAG__c}
+                </div>
+                <div class="slds-text-heading_large slds-align_absolute-right">
+                    <strong>Hours Consumed:</strong> {task.Hours_so_Far_consumed__c}
+                </div>
+                <div class="slds-text-heading_large slds-align_absolute-left">
+                    <strong>Estimated Effort:</strong> {task.Estimated_Effort_in_hrs__c}
+                </div>
+                <div class="slds-text-heading_large slds-align_absolute-right">
+                    <strong>Description:</strong> {task.Projects__r.Description__c}
+                </div>
+            </div>
+        </div>
+
+    
+</div>
+    </template>
+    <template if:false={task}>
+        <div class="slds-text-color_error">Task details not found.</div>
+    </template>
+</template>

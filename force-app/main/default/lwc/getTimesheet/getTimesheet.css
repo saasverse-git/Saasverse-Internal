@@ -1,0 +1,21 @@
+.chart-container1 {
+    height: 8vh;
+    width: 90vw;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: auto;
+    background-color: #f5f7f9;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.chart-container2 {
+    height: 50vh;
+    width: 95vw;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: auto;
+    background-color: #f5f7f9;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}

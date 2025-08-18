@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Health_c__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+ISBLANK(Task_Score__c) || Task_Score__c = 0,
+&quot;None&quot;,
+IF(
+Task_Score__c = 1,
+&quot;🟢 Green&quot;,
+IF(
+Task_Score__c &gt; 2,
+&quot;🔴 Red&quot;,
+&quot;🟠 Orange&quot;
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Health__c</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

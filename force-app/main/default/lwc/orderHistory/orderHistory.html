@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="order History">
+        <div class="slds-p-around-medium">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <lightning-input type="date" label="Start Date" value={startDate}
+                        onchange={handlestartDateChange}></lightning-input>
+                </div>
+                <div class="slds-col">
+                    <lightning-input type="date" label="End Date" value={EndDate}
+                        onchange={handleEndDateChange}></lightning-input>
+                </div>
+                <div class="slds-col">
+                    <lightning-button label="Apply" onclick={applyFilters}></lightning-button>
+                        <lightning-button label="Clear" onclick={clearFilters}></lightning-button>
+                </div>
+                <div class="slds-col">
+                    <lightning-combobox label="Sort By" options={sortoptions} value={sortOrders} onchange={handleSortChange}></lightning-combobox>
+                </div>
+            </div>
+        </div>
+
+        <lightning-dataTable key-field="Id" data={filteredOrders} columns={columns} hidecheckbox-column>
+        </lightning-dataTable>
+    </lightning-card>
+</template>

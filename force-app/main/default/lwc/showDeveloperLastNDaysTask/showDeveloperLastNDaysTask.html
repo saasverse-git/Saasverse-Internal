@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Developer Task Summary (Last 7 Working Days)">
+        <h1 class="slds-align_absolute-center"> <b>{developerName} </b></h1>
+        <template if:true={groupedData}>
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Day</th>
+                        <th>Created Task</th>
+                        <th>Updated Task</th>
+                        <th>Project(s)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={groupedData} for:item="row">
+                        <tr key={row.date}>
+                            <td>{row.date}</td>
+                            <td>{row.day}</td>
+                            <td>{row.createdTasks}</td>
+                            <td>{row.updatedTasks}</td>
+                            <td>{row.projectList}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error">{error}</p>
+        </template>
+    </lightning-card>
+</template>

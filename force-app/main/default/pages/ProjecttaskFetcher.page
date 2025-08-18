@@ -1,0 +1,21 @@
+<apex:page >
+    <apex:includeLightning />
+
+    <div id="lwcContainer"></div>
+
+    <script>
+        $Lightning.use("c:projectTaskFetch",    // Name of your Lightning app bundle
+            function() {
+                $Lightning.createComponent(
+                    "c:projectTaskUploader", // Your LWC name
+                    {},
+                    "lwcContainer",          // DOM element ID
+                    function(cmp) {
+                        console.log("LWC Loaded into Visualforce");
+                    }
+                );
+            },
+            "https://orgfarm-dbe8dfb5fd-dev-ed.develop.lightning.force.com" // Replace with your my domain
+        );
+    </script>
+</apex:page>

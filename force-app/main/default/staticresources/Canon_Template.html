@@ -1,0 +1,119 @@
+
+<apex:page contentType="application/pdf">
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        margin: 30px;
+      }
+      .right {
+        text-align: right;
+      }
+      .bold {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div style="text-align:center; font-size:16px; font-weight:bold; color:#24a2c2">Manasvi Pareek</div>
+    <div style="text-align:center; font-size:12px;">
+      314 raja ki vihar, heerapura ajmer road, Jaipur<br/>
+      7014558181<br/>
+      FVVPP8801K
+    </div>
+
+    <div style="text-align:right; font-weight:bold; color:red; margin-top:10px; margin-right:100px">TAX INVOICE</div>
+
+    <table style="width:100%; margin-top:10px;">
+      <tr>
+        <td style="vertical-align:top;">
+          <b>Sold To:</b><br/>
+          {{Address}}<br/>
+          
+          <b>Attention To:</b> Anil Kaushik
+        </td>
+        <td style="vertical-align:top;">
+          <b>Invoice No#:</b> {{invoice_Number__c}}<br/>
+          <b>Invoice Date:</b> {{Invoice_Date__c}}<br/>
+          <b>Your Ref#:</b><br/>
+          <b>Our Ref#:</b><br/>
+          <b>Credit Terms:</b> {{Credit_Days__c}}
+        </td>
+      </tr>
+    </table>
+
+    <table width="100%" border="1" cellspacing="0" cellpadding="5" style="margin-top:20px; font-size:12px; border:1px solid black;">
+  <tr style="font-weight:bold; background-color:#f2f2f2;">
+    <th style="border:1px solid black;">Description</th>
+    <th style="border:1px solid black;">Time (Hours)</th>
+    <th style="border:1px solid black;">UM</th>
+    <th style="border:1px solid black;">Price/Hour</th>
+    <th style="border:1px solid black;">Amount</th>
+  </tr>
+  <tr>
+    <td style="border:1px solid black;">
+      Professional fees/Consultancy Charges for the period<br/><br/>
+      Client Name: {{ClientName}}<br/>
+      Reporting Manager:<br/><br/>
+      Name as per Bank A/c: {{BankName}}<br/>
+      Bank A/c Number: {{AccountNumber}}<br/>
+      IFSC Code: {{IFSCCode}}<br/><br/>
+      Attachments: Approved TNE timesheet
+    </td>
+    <td style="border:1px solid black; text-align:right;">{{Quantity}}</td>
+    <td style="border:1px solid black;">Hrs</td>
+    <td style="border:1px solid black; text-align:right;">{{Rate}}</td>
+    <td style="border:1px solid black; text-align:right;">{{Amount}}</td>
+  </tr>
+
+  <!-- Totals Section Inline Below -->
+  <tr>
+    <td colspan="3" style="border:none;"></td>
+    <td style="border:1px solid black; text-align:right; font-weight:bold;">Sub Total:</td>
+    <td style="border:1px solid black; text-align:right;">{{SubTotal}}</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="border:none;"></td>
+    <td style="border:1px solid black; text-align:right; font-weight:bold;">Invoice Total:</td>
+    <td style="border:1px solid black; text-align:right;">{{InvoiceTotal}}</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="border:none;"></td>
+    <td style="border:1px solid black; text-align:right; font-weight:bold;">Delivery:</td>
+    <td style="border:1px solid black; text-align:right;">0.00</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="border:none;"></td>
+    <td style="border:1px solid black; text-align:right; font-weight:bold;">Amount Paid:</td>
+    <td style="border:1px solid black; text-align:right;">0.00</td>
+  </tr>
+  <tr>
+    <td colspan="3" style="border:none;"></td>
+    <td style="border:1px solid black; text-align:right; font-weight:bold;">Balance Due:</td>
+    <td style="border:1px solid black; text-align:right;">{{Balance_Due__c}}</td>
+  </tr>
+</table>
+
+
+    <div style="margin-top:15px; font-weight:bold;">Comments</div>
+    <div style="border:1px solid black; height:50px; padding:5px;">
+	{{Comments__c}}
+</div>
+
+    <div style="margin-top:20px; font-size:10px;">
+      <b>Terms & Conditions:</b><br/>
+      • Please make check/cheque payments payable to "NAME OF RECIPIENT"<br/>
+      • Payment may also be made by wire transfer to the following account:<br/><br/>
+      Account Name: Manasvi Pareek<br/>
+      Account No.: 6127575742<br/>
+      Bank Name: SBI Bank<br/>
+      IFSC Code: SBIN0031024<br/>
+      Name as per Bank A/c: State Bank of India (Amer Road Branch)
+    </div>
+
+  </body>
+</html>
+</apex:page>

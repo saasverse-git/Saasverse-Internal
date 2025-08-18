@@ -1,0 +1,160 @@
+<template>
+
+    <lightning-card >
+         <div class="slds-grid slds-grid_align-spread slds-p-around_medium  chart-container1">
+            <h1 class="slds-text-heading_large slds-align_absolute-center"> <strong>Project Task Management </strong> </h1>
+        </div>
+        <div  class="slds-grid slds-gutters ">
+            <div class="slds-m-left_large slds-col" style="margin-bottom:1rem; position:relative;">
+
+                <span style="position: relative; display: inline-block;">
+                    <input 
+                        type="text" 
+                        class="slds-input"
+                        placeholder="View Developer Summary"
+                        value={searchValue}
+                        oninput={handleSearchInput}
+                        onkeydown={handleSearchKeydown}
+                        autocomplete="off"
+                        title="Enter developer name to view summary"
+                        style="width: 200px; padding-right: 2rem;"  
+                    />
+
+                        <template if:true={searchValue}>
+                            <button 
+                                type="button" 
+                                class="clear-btn" 
+                                onclick={clearSearch}
+                                aria-label="Clear search"
+                                style="
+                                    position: absolute;
+                                    right: 0.5rem;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    background: none;
+                                    border: none;
+                                    font-size: 1.2rem;
+                                    cursor: pointer;
+                                    color: #888;
+                                "
+                            >
+                                &times;
+                            </button>
+                        </template>
+                    </span>
+
+            
+                <template if:true={showSuggestions}>
+                    <ul class="suggestions-list">
+                        <template for:each={developerSuggestions} for:item="name">
+                            <li key={name} data-name={name} onclick={handleSuggestionClick}>{name}</li>
+                        </template>
+                    </ul>
+                </template>
+
+                <template if:true={searchError}>
+                    <div class="slds-text-color_error" style="margin-top:0.5rem;">{searchError}</div>
+                </template>
+            </div>
+
+            <div class="slds-col slds-m-right_medium">
+                <span style="position: absolute; left: 35%;">
+                    <c-show-today-created-task></c-show-today-created-task>
+                </span>
+            </div>
+
+            <div class="slds-col ">
+                <span>
+                    <lightning-button style="position: absolute; left: 66%;"
+                        label="Show Red Tasks" 
+                        onclick={handleShowRed}
+                        data-rag="🔴 Red"
+                        variant="destructive">
+                    </lightning-button>
+                    <button
+                        class="custom-orange-button"
+                        style="position: absolute; left: 89%;"
+                        onclick={handleShowOrange}
+                        data-rag="🟠 Orange">
+                        Show Orange Tasks
+                    </button>
+                    <c-show-task-with-r-a-g lwc:ref="ragViewer"></c-show-task-with-r-a-g>
+                </span>
+            </div>
+        </div>
+    </lightning-card>
+
+    <div class="slds-grid slds-gutters chart-divContatiner ">
+        <div style="width: 50%;  display: flex; justify-content: center;  border: 2px solid #ccc; border-radius: 8px; padding: 10px;" class="slds-col">
+            <canvas class="donutChart" width="50" height="100"></canvas>
+        </div>
+        <div style="width: 50%; border: 2px solid #ccc; border-radius: 8px; padding: 10px;" class="slds-col">
+            <c-show-developer-task-downgrade-viewer></c-show-developer-task-downgrade-viewer>
+        </div>
+    </div>
+    
+
+    <!-- Summary Modal -->
+    <template if:true={showSummaryModal}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_large">
+            <div class="slds-modal__container custom-modal-width">
+                <header class="slds-modal__header" >
+                    <div style="padding:0.5rem;background:#16325c; border-radius: 26px;">
+                        <div class="slds-text-color_inverse">
+                            <h2 class="slds-modal__title" > {selectedDeveloper}</h2>
+                        </div>
+                    </div>
+                    
+                </header>
+                <div class="slds-modal__content ">
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <tbody>
+                            <tr>
+                                <th><h1>Total Tasks</h1></th>
+                                <td><h1>{summaryData.totalTasks}</h1></td>
+                            </tr>
+                            <tr>
+                                <th>Completed Tasks</th>
+                                <td>{summaryData.completedTasks}</td>
+                            </tr>
+                            <tr>
+                                <th>Uncompleted Tasks</th>
+                                <td>{summaryData.uncompletedTasks}</td>
+                            </tr>
+                            <tr>
+                                <th>Total RAG 🔴</th>
+                                <td>{summaryData.redRagTasks}</td>
+                            </tr>
+                            <tr>
+                                <th>Total RAG 🟠</th>
+                                <td>{summaryData.orangeRagTasks}</td>
+                            </tr>
+                            <tr>
+                                <th>Total RAG 🟢</th>
+                                <td>{summaryData.greenRagTasks}</td>
+                            </tr>
+                            <!-- <tr>
+                                <th>Total Estimated Effort (hrs)</th>
+                                <td>{summaryData.totalEstimatedEffort}</td>
+                            </tr> -->
+                            <tr>
+                                <th>Total Real Business Hrs Needed</th>
+                                <td>{summaryData.totalRealBusinessHrs}</td>
+                            </tr>
+                            <tr>
+                                <th>Total Hours So Far Consumed</th>
+                                <td>{summaryData.totalConsumed}</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button class="slds-m-right_xx-large" label="Show All Task" variant="brand" onclick={handleShowAllTask}></lightning-button>
+                   <button class="slds-button slds-button_neutral" onclick={closeSummaryModal}>Close</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

@@ -1,0 +1,5 @@
+<apex:page standardController="Project_Task__c">
+    <script>
+        window.location = '/lightning/cmp/c__csvfileuploader';
+    </script>
+</apex:page>

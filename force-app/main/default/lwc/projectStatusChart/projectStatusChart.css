@@ -1,0 +1,102 @@
+.main{
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    margin: auto;
+}
+
+.title{
+    text-align: center;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        padding: 10px;
+        }
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-top: 1rem;
+}
+
+.custom-table th,
+.custom-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.custom-table tr {
+    transition: background-color 0.3s ease;
+}
+
+
+.row-red {
+    background-color: #fc6969;
+    color: white;
+    font-weight: bold;
+}
+
+.row-yellow {
+    background-color: #fffc42c8;
+    color: rgb(121, 119, 119);
+    font-weight: bold;
+}
+.row-yellow:hover {
+background-color: #f8f538df;
+}
+
+.row-green {
+    background-color: #7ff58d;
+    color: rgb(74, 72, 72);
+    font-weight: bold;
+}
+.row-green:hover {
+background-color: #7ff58d;
+}
+
+.row-Blue {
+    background-color: #afafaf;
+    color: white;
+    font-weight: bold;
+}
+
+.row-red:hover {
+    background-color: #ff4d4d;
+}
+
+
+.custom-table tr:hover:not(.row-red ,.row-orange) {
+    background-color: #f2f2f2;
+}
+
+.error-text {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.custom-table th:first-child,
+.custom-table td:first-child {
+    width: 50px; /* Adjust this value to fit your design */
+    text-align: center; /* Center-align the row number */
+}
+
+.all-chart-btn{
+    border: 2px solid #0176d3;
+    width: fit-content;
+    padding: 5px 25px;
+    border-radius: 5px;
+    background-color: #0176d3;
+    color: white;
+    font-size: 14px;
+    align-self: center;
+}
+
+.card-clr{
+    background-color: #d9f0f3;
+}
+
+.header-bg {
+    display: flex;
+    background-color: #ec8d8d;
+    padding: 10px;
+}

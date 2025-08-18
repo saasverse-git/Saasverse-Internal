@@ -1,0 +1,27 @@
+<template>
+    <template if:true={loading}>
+            <lightning-spinner alternative-text="Loading chart..." size="medium"></lightning-spinner>
+    </template>
+
+    <tamplate if:true={chartOn}>
+        <div class="chart-container slds-align_absolute-center" style=" max-width: 1500px;  text-align: center;">   
+            <canvas lwc:dom="manual" style="max-width: 1600px;"></canvas>     
+        </div>   
+    </tamplate> 
+
+    <tamplate if:false={chartOn}>
+        <lightning-card style="width: 50;">
+            <h2 style="text-align:center;"> <strong>Current Task Status history is not available for this Record.</strong></h2>
+        </lightning-card>
+    </tamplate>   
+
+    <div class=" bottom-div slds-grid slds-grid_align-space slds-align_absolute-center">
+        <div class="slds-col slds-m-right_xx-large">
+            <lightning-button label="Go Back" onclick={handleGoBack} variant="neutral"></lightning-button>
+        </div>
+
+        <div class="slds-col slds-m-left_xx-large" >
+            <lightning-button label="Open Record" onclick={handleOpenRecord} variant="brand"></lightning-button>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,73 @@
+<template>
+    <lightning-button label="Show Today's Tasks" variant="brand" onclick={handleShowTasks}></lightning-button>
+    <template if:true={showModal}>
+        <section role="dialog" class="slds-modal slds-fade-in-open slds-modal_large">
+            <div class="slds-modal__container custom-modal-width">
+                <header class="slds-modal__header">
+                    <h1 class="slds-modal__title"><b>Tasks Summary</b></h1>
+                    <lightning-input 
+                        type="date" 
+                        value={selectedDate} 
+                        onchange={handleDateChange} 
+                        class="slds-m-top_medium"
+                        style="width: 200px;">
+                    </lightning-input>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <template if:true={loadingTasks}>
+                        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                    </template>
+                    <template if:false={loadingTasks}>
+                        <template if:true={developerSummary.length}>
+                            <div style="max-height: 600px; overflow-y: auto;">
+                                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Sr. No.</th>
+                                            <th>Resource Name</th>
+                                            <th>Task Count</th>
+                                            <th>Project Names</th>
+                                            <th>Created Tasks</th>
+                                            <th>Updated Tasks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <template for:each={developerSummary} for:item="dev">
+                                            <tr key={dev.rowKey}>
+                                                <td>{dev.srNo}</td>
+                                                <td >{dev.name}</td>
+                                                <td >{dev.count}</td>
+                                                <td >{dev.projectNames}</td>
+                                                <td >
+                                                    <template for:each={dev.createdTaskObjs} for:item="taskObj">
+                                                        <a href="javascript:void(0);" key={taskObj.id} data-task-id={taskObj.id} onclick={handleTaskClick} style="margin-right:8px;">
+                                                            {taskObj.name}
+                                                        </a>
+                                                    </template>
+                                                </td>
+                                                <td>
+                                                    <template for:each={dev.updatedTaskObjs} for:item="taskObj">
+                                                        <a href="javascript:void(0);" key={taskObj.id} data-task-id={taskObj.id} onclick={handleTaskClick} style="margin-right:8px;">
+                                                            {taskObj.name}
+                                                        </a>
+                                                    </template>
+                                                </td>
+                                            </tr>
+                                        </template>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </template>
+                        <template if:false={developerSummary.length}>
+                            <p>No tasks found for selected date.</p>
+                        </template>
+                    </template>
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeModal}>Close</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

@@ -1,0 +1,8 @@
+.custom-modal-width {
+    max-width: 2000px !important;
+    width: 1400px !important;
+    line-height: 25px;
+    font-size: medium;
+    font-weight: 400;
+
+}

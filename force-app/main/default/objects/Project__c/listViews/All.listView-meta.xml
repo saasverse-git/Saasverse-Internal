@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>End_Date__c</columns>
+    <columns>Cloud_Type__c</columns>
+    <columns>Resource__c</columns>
+    <columns>Status__c</columns>
+    <columns>Amber_Threshold_Multiplier_c__c</columns>
+    <columns>Green_Threshold_Multiplier_c__c</columns>
+    <columns>Health_c__c</columns>
+    <columns>Task_Score__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

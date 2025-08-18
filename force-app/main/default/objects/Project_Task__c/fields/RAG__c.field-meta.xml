@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RAG__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    OR(
+        ISBLANK(Real_Business_hours_needed__c),
+        Real_Business_hours_needed__c &lt;= 0
+    ),
+    &quot;None&quot;,
+    IF(
+        Hours_so_Far_consumed__c &lt;= 2 * Real_Business_hours_needed__c,
+        &quot;🟢 Green&quot;,
+        IF(
+            AND(
+                Hours_so_Far_consumed__c &gt; 2 * Real_Business_hours_needed__c,
+                Hours_so_Far_consumed__c &lt;= 3 * Real_Business_hours_needed__c
+            ),
+            &quot;🟠 Orange&quot;,
+            &quot;🔴 Red&quot;
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>RAG</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>RAG__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Developer_Name__c</columns>
+    <columns>Is_Working_on_Other_Tickets__c</columns>
+    <columns>Is_Active__c</columns>
+    <columns>Understanding_completed__c</columns>
+    <columns>Requirement_Gathering_Competed__c</columns>
+    <columns>Development_Start_Date__c</columns>
+    <columns>Current_Task_Status__c</columns>
+    <columns>Real_Business_hours_needed__c</columns>
+    <columns>Hours_so_Far_consumed__c</columns>
+    <columns>Estimated_Effort_in_hrs__c</columns>
+    <columns>Testing_Hours_so_far_consumed__c</columns>
+    <columns>Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

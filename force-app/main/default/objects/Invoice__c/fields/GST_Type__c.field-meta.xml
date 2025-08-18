@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GST_Type__c</fullName>
+    <label>GST Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CGST</fullName>
+                <default>false</default>
+                <label>CGST</label>
+            </value>
+            <value>
+                <fullName>SGST</fullName>
+                <default>false</default>
+                <label>SGST</label>
+            </value>
+            <value>
+                <fullName>IGST</fullName>
+                <default>false</default>
+                <label>IGST</label>
+            </value>
+            <value>
+                <fullName>UTGST</fullName>
+                <default>false</default>
+                <label>UTGST</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

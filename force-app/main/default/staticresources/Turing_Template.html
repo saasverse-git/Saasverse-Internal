@@ -1,0 +1,96 @@
+<html>
+  <body style="font-family: Arial, sans-serif; font-size: 12px; margin: 30px; color:#000;">
+
+    <!-- Header section: INVOICE + Bill From + Meta Info -->
+    <table style="width:100%; margin-bottom:24px; font-size:12px;">
+      <tr valign="top">
+        <!-- Left: Bill from + Bill to -->
+        <td style="width:60%; padding-right:20px;">
+          <b>Bill from:</b><br/>
+          Saasverse Pvt Ltd<br/>
+          Pno 314 Rajni Vihar Heerapura Ajmer Road Jaipur<br/>
+          Jaipur, RJ 302024<br/>
+          India<br/>
+          +91 7014051881<br/>
+          Registration number: 08ABLSC0377B1ZD<br/>
+          Employee ID: 4779563<br/><br/>
+
+          <b>Bill to:</b><br/>
+          Turing Enterprises Inc.<br/>
+          1900 embarcadero rd, ste 102<br/>
+          Palo Alto, CA 94303<br/>
+          United States<br/>
+          Registration number: 116982878<br/>
+          Tax ID: 824928771<br/><br/>
+          Team: Turing External Team
+        </td>
+
+        <!-- Right: INVOICE and metadata -->
+        <td style="width:40%; padding-left:10px;">
+          <div style="background:#f2f2f2; padding:6px 0; font-weight:bold; text-align:center; margin-bottom:6px;">
+            INVOICE
+          </div>
+          <div style="line-height:1.6; padding-left:6px; margin-top:6px;">
+            <b>DOCUMENT:</b> INV20254<br/>
+            <b>ISSUE DATE:</b> April 2, 2025<br/>
+            <b>DUE DATE:</b> April 7, 2025<br/>
+            <b>TOTAL:</b> ₹{{TotalAmount}}
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Contract / scope -->
+    <div style="margin-bottom:22px;">
+      <span style="color:#888;">Contract</span><br/>
+      <span style="font-size:14px; font-weight:bold;">Turing – Remote work agreement</span><br/><br/>
+
+      <span style="color:#888;">Scope</span><br/>
+      Role: LWC & Apex Engineer – LLM – PARAG BHATT<br/>
+      Tech: Apex Programming | 3, Salesforce Lightning | 3, Web Components | 3<br/><br/>
+
+      <span style="color:#888;">Approved by:</span><br/>
+      Mong Zhang (emily.zhang-c@turing.com) on April 2, 2025
+    </div>
+
+   <!-- Line items table - Styled like Deel -->
+<table style="width:100%; border-collapse:collapse; font-size:12px; border:1px solid #888; margin-top:20px;">
+  <tr style="background:#f2f2f2;">
+    <th style="border:1px solid #888; padding:8px; text-align:left;">DESCRIPTION / MEMO</th>
+    <th style="border:1px solid #888; padding:8px; text-align:right;">AMOUNT</th>
+  </tr>
+
+  <!-- Line item description -->
+  <tr>
+    <td style="border:1px solid #888; padding:8px;">
+      <strong>Pay As You Go Contract</strong><br/>
+      <span style="font-style:italic; color:#555;">Invoice for work between March 1, 2025 to March 31, 2025</span><br/>
+      <span style="font-size:11px; color:#888;">168 hours for 1 submission</span><br/><br/>
+      Work: Reported by client<br/>
+      <span style="font-size:11px; color:#888;">168 hours</span>
+    </td>
+    <td style="border:1px solid #888; padding:8px; text-align:right;">₹{{SubTotal}}</td>
+  </tr>
+
+  <!-- Empty row for spacing -->
+  <tr>
+    <td style="border:1px solid #888; padding:20px;"></td>
+    <td style="border:1px solid #888;"></td>
+  </tr>
+
+  <!-- VAT -->
+  <tr>
+    <td style="border:1px solid #888; padding:8px; text-align:right;">VAT (0%)</td>
+    <td style="border:1px solid #888; padding:8px; text-align:right;">₹0.00</td>
+  </tr>
+
+  <!-- TOTAL -->
+  <tr>
+    <td style="border:1px solid #888; padding:8px; text-align:right;"><strong>TOTAL</strong></td>
+    <td style="border:1px solid #888; padding:8px; text-align:right;"><strong>₹{{TotalAmount}}</strong></td>
+  </tr>
+</table>
+
+
+  </body>
+</html>

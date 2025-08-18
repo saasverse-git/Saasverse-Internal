@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Compect_Layout</fullName>
+    <fields>Project_Task_Name__c</fields>
+    <fields>Name</fields>
+    <fields>Assigned_To1__c</fields>
+    <fields>Developer_Name__c</fields>
+    <fields>Projects__c</fields>
+    <fields>Task_Testing_Status__c</fields>
+    <fields>RAG__c</fields>
+    <label>Custom Compect Layout</label>
+</CompactLayout>

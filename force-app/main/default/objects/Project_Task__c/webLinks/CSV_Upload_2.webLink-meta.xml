@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSV_Upload_2</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>CSV Upload 2</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>window.open(
+    &apos;/flow/ScreenFlowTest&apos;,
+    &apos;LwcPopup&apos;,
+  &apos;width=800,height=600,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes&apos;
+);</url>
+</WebLink>

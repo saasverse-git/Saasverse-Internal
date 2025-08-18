@@ -1,0 +1,32 @@
+<template>
+    
+        <div class="slds-box slds-theme_default slds-m-around_medium main-part" >
+            <lightning-combobox
+                style="width: 300px;"
+                options={projectOptions}
+                onchange={handleProjectChange}
+                placeholder="Select a Project">
+            </lightning-combobox>
+            <div  class="all-chart-btn"  onclick={showAllProjectCharts}>All Charts</div>
+        </div>
+
+    <template if:true={chartOn}>
+        <div class="chart-container">
+            <canvas class="chart" lwc:dom="manual"></canvas>
+        </div>
+    </template>    
+
+<template if:true={showAllProject}>
+    <lightning-card title="All Projects Health Charts">
+       
+        <div class="chart-containerAll">
+            <template for:each={allChartsData} for:item="project">
+                <div key={project.projectId} class="chart-boxAll">
+                    <h3 class="slds-text-heading_small">{project.projectName}</h3>
+                    <canvas lwc:dom="manual" class="project-chart" data-id={project.projectId}></canvas>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+      </template>
+</template>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Estimated_Effort_in_hrs__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This field calculates the Estimated Effort in business working hours for all active tasks (currently under Development), starting from the Development Start Date until the task status reaches &apos;Development Completed&apos;.</inlineHelpText>
+    <label>Estimated Effort(in hrs)</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

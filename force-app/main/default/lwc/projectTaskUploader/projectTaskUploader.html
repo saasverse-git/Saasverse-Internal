@@ -1,0 +1,34 @@
+<template>
+   <lightning-card class="custom-card" title="Upload Project Tasks CSV">
+        <div class="slds-p-around_medium">
+            <lightning-button label="Upload CSV Tasks" onclick={handleOpenModal} variant="brand"></lightning-button>
+            <!-- <lightning-input type="file" label="Upload CSV Tasks" accept=".csv" onchange={handleOpenModal}></lightning-input>
+            -->
+        </div>
+   </lightning-card>
+    <!-- Modal Section -->
+    <template if:true={showModal}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_medium">
+            <div class="slds-modal__container">
+                <!-- Modal Header -->
+                <header class="slds-modal__header">
+                    <h2 class="slds-modal__title">Upload Project Tasks</h2>
+                </header>
+
+                <!-- Modal Body  -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <input type="file" accept=".csv" onchange={handleFileChange} />
+                </div>
+
+                <!-- Modal Footer -->
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Submit" variant="brand" onclick={handleSubmit} class="slds-m-right_medium"></lightning-button>
+                    <lightning-button label="Cancel" onclick={handleCloseModal}></lightning-button>
+                </footer>
+            </div>
+        </section>
+
+        <!-- Modal Backdrop -->
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

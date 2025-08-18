@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Testing_Hours_so_far_consumed__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Calculates Testing Time in business hours (8 hrs/day), starting from when the task status changed to &quot;UAT In Progress&quot; until &quot;Task Completed&quot;, using field history tracking.</inlineHelpText>
+    <label>Testing Hours so far consumed</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

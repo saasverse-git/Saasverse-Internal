@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="PDF Uploader" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <!-- File Input -->
+            <lightning-input type="file" label="Upload PDF" accept=".pdf" onchange={handleFileUpload}></lightning-input>
+
+            <!-- Upload Button -->
+            <lightning-button label="Upload PDF" onclick={handleUpload} class="slds-m-top_medium"></lightning-button>
+
+            <!-- Display Extracted Data -->
+            <template if:true={extractedData}>
+                <div class="slds-m-top_medium">
+                    <h3>Extracted Data from PDF:</h3>
+                    <pre>{extractedData}</pre>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

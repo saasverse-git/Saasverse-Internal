@@ -1,0 +1,40 @@
+<!-- <template>
+    <div class="path-container">
+        <template for:each={stepsWithClass} for:item="stepObj">
+            <div key={stepObj.label} class={stepObj.cssClass}>
+                <span>{stepObj.label}</span>
+            </div>
+        </template>
+    </div>
+</template> -->
+
+<template>
+    <div class="custom-path-container">
+        <div class="slds-path">
+            <div class="slds-grid slds-path__track">
+                <ul class="slds-path__nav" role="listbox" aria-orientation="horizontal">
+                    <template for:each={stepsWithClass} for:item="step">
+                        <li
+                            key={step.label}
+                            class={step.cssClass}
+                            role="presentation"
+                            aria-selected={step.isCurrent}
+                        >
+                            <a class="slds-path__link" role="option">
+                                <span class="slds-path__stage">
+                                    <lightning-icon
+                                        icon-name={step.iconName}
+                                        size="x-small"
+                                        variant="inverse"
+                                        class="slds-icon_container"
+                                    ></lightning-icon>
+                                </span>
+                                <span class="custom-bold-title slds-path__title">{step.label}</span>
+                            </a>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>

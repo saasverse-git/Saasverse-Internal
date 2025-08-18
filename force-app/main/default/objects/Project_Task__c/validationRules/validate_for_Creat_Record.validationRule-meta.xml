@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>validate_for_Creat_Record</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISNEW() &amp;&amp;
+(
+  ISPICKVAL(Current_Task_Status__c, &quot;Task Completed&quot;) ||
+  ISPICKVAL(Current_Task_Status__c, &quot;UAT Completed&quot;) ||
+  ISPICKVAL(Current_Task_Status__c, &quot;Deployment Issue&quot;)||
+  ISPICKVAL(Current_Task_Status__c, &quot;Unit Testing Completed&quot;)
+)</errorConditionFormula>
+    <errorMessage>You cannot set the Current Task Status to &apos;Task Completed&apos;, &apos;UAT Completed&apos;, or &apos;Deployment Issue&apos; during task creation.</errorMessage>
+</ValidationRule>

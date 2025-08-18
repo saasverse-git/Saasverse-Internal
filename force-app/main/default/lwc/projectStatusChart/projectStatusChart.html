@@ -1,0 +1,46 @@
+<template>
+    <div class="slds-box slds-theme_default slds-m-around_medium main-part">
+        <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center" >
+            <lightning-combobox
+                style="width: 300px;"
+                options={projectOptions}
+                onchange={handleProjectChange}
+                placeholder="Select Project">
+            </lightning-combobox>
+            <!-- <div  class="all-chart-btn"  onclick={showAllProject}>All Charts</div> -->
+            <lightning-button class="slds-grid slds-grid_align-end"
+                variant="brand" 
+                label="All Project" 
+                onclick={showAllProject} >
+            </lightning-button>
+        </div>
+    </div>
+    <div class="main">
+        <h2 class="title" style="font-size: 1.5rem; font-weight: bold;"> Projects Status</h2>
+
+        <template if:true={projects}>
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>No.</th> <!-- Column for numbering -->
+                        <th>Project Name</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={projects} for:item="project">
+                        <tr key={project.Id} class={project.rowClass}>
+                            <td>{project.rowNumber}</td> <!-- Use rowNumber here -->
+                            <td>{project.Name}</td>
+                            <td>{project.Status__c}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+
+        <template if:true={error}>
+            <p class="error-text">{error}</p>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice</title>
+</head>
+<body style="font-family: Arial; font-size: 12px;">
+
+  <!-- Outer wrapper table -->
+  <table width="100%" border="1" cellspacing="0" cellpadding="10" style="border-collapse: collapse; border: 2px solid black;">
+    <tr>
+      <td>
+
+        <!-- Header Address -->
+        <table width="100%" border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse;">
+          <tr>
+            <td colspan="2" align="center" style="font-weight: bold;">
+              Parag Bhatt
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center" style="font-weight: bold;">
+              314 Rajni Vihar, Heerapura, Ajmer road
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center" style="font-weight: bold;">
+              Jaipur, Rajasthan India 302021
+            </td>
+          </tr>
+        </table>
+
+        <br>
+
+        <!-- Customer Info and Invoice Details Section -->
+        <table width="100%" border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse;">
+          <tr>
+            <!-- Left Column -->
+            <td width="50%" valign="top">
+              <table width="100%" border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse;">
+                <tr>
+                  <td><b>Bill To</b></td>
+                </tr>
+                <tr>
+                  <td>
+                    <b>{{ClientName}}</b><br>
+                    B-104, SK Aster, Green House Layout<br>
+                    Doddathogur, Electronic City
+                  </td>
+                </tr>
+                <tr>
+                  <td><b>Service Period:</b> {{ServicePeriod}}</td>
+                </tr>
+              </table>
+            </td>
+
+            <!-- Right Column -->
+            <td width="50%" valign="top">
+              <table width="100%" border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse;">
+                <tr>
+                  <td><b>Date</b></td>
+                  <td>{{InvoiceDate}}</td>
+                </tr>
+                <tr>
+                  <td><b>Invoice No</b></td>
+                  <td>{{InvoiceNumber}}</td>
+                </tr>
+                <tr>
+                  <td><b>Credit Days</b></td>
+                  <td>{{CreditDays}}</td>
+                </tr>
+                <tr>
+                  <td><b>Due Date</b></td>
+                  <td>{{DueDate}}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <br>
+
+        <!-- Invoice Line Items -->
+        <table width="100%" border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse;">
+          <tr style="font-weight: bold;">
+            <td>Consultant</td>
+            <td>Description</td>
+            <td>Quantity</td>
+            <td>Rate</td>
+            <td>Amount</td>
+          </tr>
+          <tr>
+            <td>Parag Bhatt</td>
+            <td>{{ServicePeriod}}</td>
+            <td>{{Quantity}}</td>
+            <td>INR {{Rate}}</td>
+            <td>INR {{Amount}}</td>
+          </tr>
+          <tr>
+            <td colspan="4" align="right"><b>Sub Total</b></td>
+            <td>INR {{SubTotal}}</td>
+          </tr>
+          <tr>
+            <td colspan="4" align="right"><b>Invoice Total</b></td>
+            <td>INR {{InvoiceTotal}}</td>
+          </tr>
+        </table>
+
+        <br>
+
+        <!-- Bank Details and Signature Side by Side -->
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
+          <tr>
+            <!-- Bank Details: Left 50% -->
+            <td width="50%" valign="top">
+              <table width="100%" border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse;">
+                <tr>
+                  <td>
+                    <b>Bank Account Details:</b><br>
+                    Bank: {{BankName}}<br>
+                    Name: {{AccountHolderName}}<br>
+                    Account number: {{AccountNumber}}<br>
+                    IFSC Code: {{IFSCCode}}<br>
+                    Account name: {{AccountHolderName}}<br>
+                    PAN Number: {{PANNumber}}
+                  </td>
+                </tr>
+              </table>
+            </td>
+
+            <!-- Signature: Right 50% -->
+            <td width="50%" align="right" valign="bottom">
+              <img src="{!$Resource.ParagBhattSignature}" alt="Signature" width="150"><br>
+              <b>Parag Bhatt</b>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

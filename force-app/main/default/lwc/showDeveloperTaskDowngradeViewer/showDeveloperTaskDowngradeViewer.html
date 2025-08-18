@@ -1,0 +1,89 @@
+<template>
+    <div class="chart-scroll-container">
+        <canvas class="donutChart" lwc:dom="manual" style="width: 80%; height: 200px;"></canvas>
+    </div>
+
+
+    <template if:true={isModalOpen}>
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+
+            <!-- Modal/Popup Header -->
+            <header class="slds-modal__header">
+                <h2 class="slds-text-heading_medium">
+                    Downgraded Tasks - {modalDeveloper}
+                </h2>
+                <button class="slds-button slds-button_icon slds-modal__close" title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close" size="small"></lightning-icon>
+                </button>
+            </header>
+
+            <!-- Modal Body -->
+            <div class="slds-modal__content slds-p-around_medium">
+
+                <!-- Table for Downgraded Tasks -->
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Sr. No.</th>
+                            <th scope="col">Task No</th>
+                            <th scope="col">Project Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={modalTasks} for:item="task">
+    <tr key={task.Id}>
+        <td>{task.srNo}</td>
+        <td>
+            <a
+                href="javascript:void(0);"
+                data-task-id={task.Id}
+                onclick={handleTaskClick}
+                style="color: #0070d2; text-decoration: underline;">
+                {task.taskName}
+            </a>
+        </td>
+        <td>{task.projectName}</td>
+    </tr>
+</template>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick={closeModal}>Close</button>
+            </footer>
+        </div>
+    </section>
+
+    <!-- Backdrop -->
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+
+    <!-- <template if:true={isModalOpen}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2>Downgraded Tasks - {modalDeveloperName}</h2>
+                </header>
+                <div class="slds-modal__content">
+                    <template if:true={modalTasks}>
+                        <ul>
+                            <template for:each={modalTasks} for:item="task">
+                                <li key={task.taskName}>
+                                    <strong>{task.taskName}</strong> — {task.projectName}
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Close" onclick={closeModal}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template> -->

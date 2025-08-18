@@ -1,0 +1,93 @@
+<template>
+    <lightning-card title="Task Summary By Date" icon-name="custom:custom63">
+        <div class="slds-p-around_medium">
+            <lightning-input 
+                type="date" 
+                label="Select Date" 
+                onchange={handleDateChange} 
+                style="width: 400px;">
+            </lightning-input>
+
+            <template if:true={selectedDate}>
+                <div class="slds-m-top_medium">
+                    <p><strong>Total Records Created:</strong> {createdTasks.length}</p>
+                    <ul>
+                        <template for:each={createdTasks} for:item="task">
+                            <li key={task.Id}>
+                                <a href="javascript:void(0);" data-id={task.Id} onclick={handleTaskClick} style="color:#0070d2; text-decoration:underline;">
+                                    {task.Name}
+                                </a>
+                            </li>
+                        </template>
+                    </ul>
+
+                    <p class="slds-m-top_medium"><strong>Total Records Updated:</strong> {updatedTasks.length}</p>
+                    <ul>
+                        <template for:each={updatedTasks} for:item="task">
+                            <li key={task.Id}>
+                                <a href="javascript:void(0);" data-id={task.Id} onclick={handleTaskClick} style="color:#0070d2; text-decoration:underline;">
+                                    {task.Name}
+                                </a>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <p class="slds-text-color_error">Error: {error.body.message}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
+
+
+
+
+<!-- <template>
+    <lightning-card title="Task Summary By Date" icon-name="custom:custom63">
+        <div class="slds-p-around_medium">
+            <lightning-input type="date" label="Select Date" onchange={handleDateChange} style="width: 400px;"></lightning-input>
+
+            <template if:true={selectedDate}>
+                <p class="slds-m-top_medium"><strong>Total Records Created:</strong> {createdCount}</p>
+                <p><strong>Total Records Updated:</strong> {updatedCount}</p>
+            </template>
+
+            <template if:true={error}>
+                <p class="slds-text-color_error">Error: {error.body.message}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template> -->
+
+
+
+<!-- <template>
+    <lightning-card title="Filter Records by Created Date">
+        <div class="slds-p-around_medium">
+            <lightning-input style="width: 300px;"
+                type="date" 
+                label="Select Date"
+                value={selectedDate}
+                onchange={handleDateChange}>
+            </lightning-input>
+
+            <lightning-button
+                label="Get Record Count"
+                onclick={handleCheckCount}
+                class="slds-m-top_medium">
+            </lightning-button>
+
+            <template if:true={recordCount}>
+                <p class="slds-m-top_medium">
+                    <strong>Total Records Created:</strong> {recordCount}
+                </p>
+            </template>
+
+            <template if:true={error}>
+                <p class="slds-text-color_error">{error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template> -->

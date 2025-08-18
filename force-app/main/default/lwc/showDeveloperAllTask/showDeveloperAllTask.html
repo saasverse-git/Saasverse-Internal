@@ -1,0 +1,72 @@
+<template>
+    <lightning-card part="base">
+        <h1 class="slds-align_absolute-center slds-m-bottom_small custom-title">
+            {developerName}
+        </h1>
+        <div class="slds-grid">  
+            
+            <div >     
+                <lightning-input class="slds-m-left_x-large" 
+                    name = "StartDate"
+                    type="date" 
+                    placeholder ="select start date" 
+                    onchange={handleDateChange}
+                    value = {startDate}
+                    style="width: 200px; margin-top: -20px;">
+                </lightning-input>            
+            </div>
+            <div >     
+                <lightning-input class="slds-m-left_medium"
+                    name = "EndDate"
+                    type="date" 
+                    hide-formet
+                    placeholder ="select end date" 
+                    onchange={handleDateChange}
+                    value={endDate}
+                    style="width: 200px; margin-top: -20px;">
+                </lightning-input>            
+            </div>
+            <div >
+               <lightning-button class="slds-m-left_medium" style="margin-top: -20px;"
+                    icon-name="utility:search"
+                    onclick={heandleSearch}
+                    title="Search">
+                </lightning-button>
+            </div>     
+            <div>
+                <lightning-button class="slds-m-left_medium" style="margin-top: -20px;"
+                    variant="bare-inverse"
+                    icon-name="action:refresh"
+                    onclick={handleRefresh}>
+                </lightning-button>
+            </div>   
+            <div class="slds-col_bump-left">
+                <lightning-button class="slds-m-right_x-large" 
+                    label="Download"
+                    icon-name="action:download"
+                    variant="brand"
+                    onclick={handleDownloadCSV}>
+                </lightning-button>
+            </div>
+            
+        </div>
+    </lightning-card>
+    
+    <lightning-card>
+        <template if:true={tasks}>       
+            <div class="custom-table slds-box slds-m-around_medium">
+                <lightning-datatable 
+                    key-field="Id"
+                    data={tasks}
+                    columns={columns}
+                    hide-checkbox-column>
+                </lightning-datatable>
+            </div>
+        </template>
+        <template if:true={error}>
+            <div class="slds-text-color_error slds-m-around_medium">
+                Error loading tasks: {error.message}
+            </div>
+        </template>
+    </lightning-card>   
+</template>

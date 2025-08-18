@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_New__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Select this checkbox to mark the resource as a new team member under observation. This helps identify users within their first 15 days for additional support, training, or performance review.</inlineHelpText>
+    <label>Is New</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

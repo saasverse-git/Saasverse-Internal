@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Akshat_Bhatt</fullName>
+    <columns>NAME</columns>
+    <columns>Created_Date__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Assigned_To1__c</columns>
+    <columns>Development_Start_Date__c</columns>
+    <columns>Projects__c</columns>
+    <columns>Description__c</columns>
+    <columns>Current_Task_Status__c</columns>
+    <columns>Is_Active__c</columns>
+    <columns>Is_Working_on_Other_Tickets__c</columns>
+    <columns>Requirement_Gathering_Competed__c</columns>
+    <columns>Understanding_completed__c</columns>
+    <columns>Real_Business_hours_needed__c</columns>
+    <columns>Hours_so_Far_consumed__c</columns>
+    <columns>RAG__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Developer_Name__c</field>
+        <operation>equals</operation>
+        <value>Akshat Bhatt</value>
+    </filters>
+    <label>Akshat Bhatt</label>
+</ListView>

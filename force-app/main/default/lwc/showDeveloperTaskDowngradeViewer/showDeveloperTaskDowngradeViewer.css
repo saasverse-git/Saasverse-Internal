@@ -1,0 +1,15 @@
+.custom-container{
+	color : black;
+}
+.donutChart {
+    width: 800px !important;
+    height: 500px !important;
+    max-width: 825px;
+    max-height: 500px;
+}
+
+.chart-scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 16px;
+}

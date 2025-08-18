@@ -1,0 +1,10 @@
+.chart-divContatiner {
+    height: 70vh;
+    width: 95vw;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: auto;
+    background-color: #fefefe;
+    border-radius: 30px;
+    margin-top: 30px;
+}
