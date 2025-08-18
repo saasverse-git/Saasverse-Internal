@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Manager Queue</name>
+    <queueMembers>
+        <users>
+            <user>af1612@contax360.com</user>
+            <user>cmckenzie.sb@contax360.com</user>
+            <user>ct8001@contax360.com</user>
+            <user>mrichards@contax360.com</user>
+            <user>rg5012@contax360.com</user>
+            <user>tjoehill@contax360.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

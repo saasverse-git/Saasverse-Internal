@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkSkillRouting xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isActive>true</isActive>
+    <masterLabel>Case Skill Maping</masterLabel>
+    <relatedEntity>Case</relatedEntity>
+    <workSkillRoutingAttributes>
+        <field>Case.custom_reason_for_contact__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>PIR</skill>
+        <skillLevel>0</skillLevel>
+        <value>Property Damage</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.custom_reason_for_contact__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>PIR</skill>
+        <skillLevel>0</skillLevel>
+        <value>Injury</value>
+    </workSkillRoutingAttributes>
+    <workSkillRoutingAttributes>
+        <field>Case.custom_reason_for_contact__c</field>
+        <isAdditionalSkill>false</isAdditionalSkill>
+        <skill>Insurance</skill>
+        <skillLevel>0</skillLevel>
+        <value>Recall</value>
+    </workSkillRoutingAttributes>
+</WorkSkillRouting>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>CS Email Auto Response 09202022</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Web</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>empowercustomerservice@spectrumbrands.com</replyToEmail>
+            <senderEmail>cssfnoreply@spectrumbrands.com</senderEmail>
+            <senderName>Consumer Support</senderName>
+            <template>Acknowledgement_template/Email_Acknowledgement_Template</template>
+        </ruleEntry>
+    </autoResponseRule>
+    <autoResponseRule>
+        <fullName>CS Email Auto response</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Web</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>info@tvcustomerinfo.com</replyToEmail>
+            <senderEmail>tristarcustomerservice@tristarproductsinc.com</senderEmail>
+            <senderName>Tristar Customer Support</senderName>
+            <template>Acknowledgement_template/Email_Acknowledgement_Template</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Customer Service</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>customerservice@tristarproductsinc.com</replyToEmail>
+            <senderEmail>tristarcustomerservice@tristarproductsinc.com</senderEmail>
+            <senderName>Tristar Customer Support</senderName>
+            <template>Acknowledgement_template/Email_Acknowledgement_Template</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-WeCare</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>wecare@tristarproductsinc.com</replyToEmail>
+            <senderEmail>tristarcustomerservice@tristarproductsinc.com</senderEmail>
+            <senderName>Tristar Customer Support</senderName>
+            <template>Acknowledgement_template/Email_Acknowledgement_Template</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email Infotp</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>infotp@tristarproductsinc.com</replyToEmail>
+            <senderEmail>tristarcustomerservice@tristarproductsinc.com</senderEmail>
+            <senderName>Tristar Customer Support</senderName>
+            <template>Acknowledgement_template/Email_Acknowledgement_Template</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Contact Us Web to Case</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>infotp@tristarproductsinc.com</replyToEmail>
+            <senderEmail>tristarcustomerservice@tristarproductsinc.com</senderEmail>
+            <senderName>Tristar Customer Support</senderName>
+            <template>Acknowledgement_template/Email_Acknowledgement_Template</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Retail</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>infotp@tristarproductsinc.com</replyToEmail>
+            <senderEmail>tristarcustomerservice@tristarproductsinc.com</senderEmail>
+            <senderName>Tristar Customer Support</senderName>
+            <template>Acknowledgement_template/Email_Acknowledgement_Template</template>
+        </ruleEntry>
+        <ruleEntry>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>customerservice@tristarproductsinc.com</replyToEmail>
+            <senderEmail>tristarcustomerservice@tristarproductsinc.com</senderEmail>
+            <senderName>Tristar Customer Support</senderName>
+            <template>Acknowledgement_template/Email_Acknowledgement_Template</template>
+        </ruleEntry>
+    </autoResponseRule>
+    <autoResponseRule>
+        <fullName>Email-to-Case testing</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.OwnerId</field>
+                <operation>equals</operation>
+                <value>Basic Queue</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>cssfnoreply@spectrumbrands.com</senderEmail>
+            <senderName>Spectrum Brands</senderName>
+            <template>unfiled$public/Email_to_case_auto_reply</template>
+        </ruleEntry>
+    </autoResponseRule>
+    <autoResponseRule>
+        <fullName>Recall Request Acknowledgment</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Recall Registration</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>New - Awaiting Review</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>cssfnoreply@spectrumbrands.com</senderEmail>
+            <senderName>Customer Service Email Acknowledgement</senderName>
+            <template>unfiled$public/Notify_Recall_Case_Submitter</template>
+        </ruleEntry>
+    </autoResponseRule>
+    <autoResponseRule>
+        <fullName>Ticket auto response 08042020</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Customer Service</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>customerservice@tristarproductsinc.com</replyToEmail>
+            <senderEmail>tristarcustomerservice@tristarproductsinc.com</senderEmail>
+            <senderName>Tristar Customer Service</senderName>
+            <template>Acknowledgement_template/Email_Acknowledgement_Template</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Web</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>info@tvcustomerinfo.com</replyToEmail>
+            <senderEmail>tristarcustomerservice@tristarproductsinc.com</senderEmail>
+            <senderName>Tristar Customer Service</senderName>
+            <template>Acknowledgement_template/Web_Email_Acknowledgement_Template</template>
+        </ruleEntry>
+        <ruleEntry>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>customerservice@tristarproductsinc.com</replyToEmail>
+            <senderEmail>tristarcustomerservice@tristarproductsinc.com</senderEmail>
+            <senderName>Tristar Customer Service</senderName>
+            <template>Acknowledgement_template/Email_Acknowledgement_Template</template>
+        </ruleEntry>
+    </autoResponseRule>
+    <autoResponseRule>
+        <fullName>new case test</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Email-Retail</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>tristarcustomerservice@tristarproductsinc.com</replyToEmail>
+            <senderEmail>tristarcustomerservice@tristarproductsinc.com</senderEmail>
+            <senderName>Customer Support</senderName>
+            <template>Acknowledgement_template/Email_Acknowledgement_Template</template>
+        </ruleEntry>
+    </autoResponseRule>
+    <autoResponseRule>
+        <fullName>test</fullName>
+        <active>false</active>
+    </autoResponseRule>
+</AutoResponseRules>

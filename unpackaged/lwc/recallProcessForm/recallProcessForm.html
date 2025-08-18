@@ -1,0 +1,362 @@
+<template>
+    <iframe src={fingerprintHtmlUrl} style="display:none;" title="FPJS Agent">
+    </iframe>
+
+    <template if:true={duplicateCaseError}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Submission Failed</h2>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <p>{fingerprintMessage}</p>
+                </div>
+                <div class="slds-modal__footer">
+                    <button class="slds-button" onclick={closeFingerprintModal}>Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={duplicateSubmitRecord}>Submit</button>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <template if:true={isLoading}>
+        <div class="slds-p-top_medium">
+            <lightning-spinner alternative-text="Uploading..." size="medium"></lightning-spinner>
+        </div>
+    </template>
+    <div class="main">
+        <div class="black-part">
+            <div class="title">Register Remington Hairdryer</div>
+        </div>
+
+
+        <div class="grey-part">
+            <div class="form">
+                <div class="form-inner">
+                    <div class="form-header">
+                        <div class="form-title">Your Information</div>
+                        <div class="form-req">* Required Fields</div>
+
+                    </div>
+                    <div>
+                        <div class="input-form">
+
+                            <div class="box">
+
+                                <label class="input-label" for="First_Name" >* First Name:</label>
+                                <div class="input"> <input class="inline-input" id="First_Name" name="First_Name" type="text" variant="label-hidden" onchange={handleOnchange} onblur={handleBlur} />
+                                </div>
+                            </div>
+
+                            <div class="box">
+                                <label class="input-label" for="Last_Name">* Last Name:</label>
+                                <div class="input"> <input class="inline-input" id="Last_Name" name="Last_Name" type="text" variant="label-hidden" onchange={handleOnchange} onblur={handleBlur} />
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="input-form">
+
+                            <div class="box">
+
+                                <label class="input-label" for="SuppliedEmail" >* Email Address:</label>
+                                <div class="input"> <input class="email-inline-input" id="SuppliedEmail" name="SuppliedEmail" type="text" variant="label-hidden" onchange={handleOnchange} onblur={handleBlur}/>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <div>
+                            <div class="input-form">
+                                <div class="box">
+                                    <label class="input-label" for="SuppliedPhone">* Cell Phone:</label>
+
+                                    <div class="input"> <input class="inline-input" id="SuppliedPhone" name="SuppliedPhone" type="text" variant="label-hidden" onchange={handleOnchange} onblur={handleBlur} onkeypress={allowOnlyDigits}/>
+                                    </div>
+                                </div>
+
+                                <div class="box">
+
+                                    <label class="input-label" for="ContactPhone">Home Phone:</label>
+                                    <div class="input"> <input class="inline-input" id="ContactPhone" name="ContactPhone" type="text" variant="label-hidden" onchange={handleOnchange} onblur={handleBlur} onkeypress={allowOnlyDigits}/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div>
+                            <div class="input-form">
+                                <div class="box">
+
+                                    <label class="input-label" for="Address">* Address 1:</label>
+                                    <div class="input"> <input class="inline-input" id="Address" name="Address" type="text" variant="label-hidden" onchange={handleOnchange} onblur={handleBlur} />
+                                    </div>
+                                </div>
+
+                                <div class="box">
+                                    <label class="input-label" for="Support_Address">Address 2:</label>
+
+                                    <div class="input"> <input class="inline-input" id="Support_Address" name="Support_Address" type="text" variant="label-hidden" onchange={handleOnchange} onblur={handleBlur} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="city-box">
+                            <div class="input-form-city">
+                                <div class="box-city">
+
+                                    <label class="input-label" for="City">* City:</label>
+                                    <div class="input"> <input class="inline-input" id="City" name="City" type="text" variant="label-hidden" onchange={handleOnchange} onblur={handleBlur} />
+                                    </div>
+                                </div>
+
+                                <div class="box-state">
+                                    <div class="box2">
+                                        <label class="input-label" for="State">* State/Prov:</label>
+
+                                        <!-- <div class="input">
+                                            <lightning-combobox class="inline-input" name="State" variant="label-hidden"
+                                                placeholder="Select a state" value={selectedState}
+                                                options={stateOptions} onchange={handlePicklistChange}>
+                                            </lightning-combobox>
+                                        </div> -->
+                                        <div class="input">
+                                            <select class="inline-input" name="State" onchange={handlePicklistChange} id="State"><option value=""></option>
+                                                <template for:each={stateOptions} for:item="option">
+                                                    <option key={option.value} value={option.value}>{option.label}</option>
+                                                </template>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="box2">
+                                        <label class="input-label" for="ZipCode">* Postal Code:</label>
+
+                                        <div class="input"> <input class="inline-input" id="ZipCode" name="ZipCode" type="text" variant="label-hidden" onchange={handleOnchange} onblur={handleBlur} onkeypress={allowOnlyDigits}/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div>
+                            <div class="form-title">Product Information</div>
+                            <div class="input-form">
+                                <div class="box">
+
+                                    <label class="input-label" for="Model_Number">* Model Number:</label>
+                                         <p class="text-r">The model number can be found on the rating label on the back handle of the unit.
+                                        Only units with “REF: D3190DCDN” on the rating label are affected by this
+                                        recall. The affected units are purple, with a black accent.</p>
+                                    <!-- <div class="input">
+                                        <select class="inline-input" name="Model_Number" onchange={handlePicklistChange} id="Model_Number"><option value=""></option>
+    <template for:each={modelOptions} for:item="option">
+      <option key={option.value} value={option.value}>{option.label}</option>
+    </template>
+  </select>
+                                    </div> -->
+
+
+                                </div>
+
+                                <!-- <div class="box">
+                                    <p>the model number can be found on the rating label on the back handle of the unit.
+                                        Only units with “REF: D3190DCDN” on the rating label are affected by this
+                                        recall. The affected units are purple, with a black accent.</p>
+
+
+                                </div> -->
+                            </div>
+                        </div>
+
+
+
+
+                        <!-- <div>
+                            <div class="input-form">
+                                <div class="box">
+
+                                    <label class="input-label" for="Purchase_Date">* Purchase Date:</label>
+                                    
+                                    <div class="input">
+                                        <input
+                                                class="inline-input"
+                                                type="date"
+                                                id="Purchase_Date"
+                                                name="Purchase_Date"
+                                                onchange={handleOnchange}
+                                                onblur={handleBlur}
+                                            />
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="box">
+                                    <p>If you do not know the purchase date, please provide an estimated date of
+                                        purchase.</p>
+                                </div>
+                            </div>
+                        </div> -->
+
+
+                        <div class="form-title">* Photo</div>
+
+                        <div>
+                            <div class="input-form">
+                                <div class="box">
+
+                                    <div class="input">
+                                        <label class="custom-upload-area" for="photoUpload">
+          Drop files or click/tap here to upload
+          <input
+            multiple
+            type="file"
+            id="photoUpload"
+            name="photoUpload"
+            accept="image/*"
+            onchange={handleFileOnChange}
+            disabled={dontHavePhotos}
+          />
+          <template if:true={filePreviews}>
+            <div class="slds-m-top_medium uploaded">
+            <template for:each={filePreviews} for:item="file">
+                <div key={file.name} class="slds-m-bottom_small upload-outer">
+                    <div class="cross-div">
+               <div> <p>{file.name}</p></div>
+                <div>
+                <button 
+                    class="slds-button slds-button_icon slds-button_icon-error slds-m-left_x-small"
+                    title="Remove file"
+                    onclick={handleRemoveFile}
+                    data-name={file.name}
+                    disabled={dontHavePhotos}
+                >
+                    <lightning-icon
+                        icon-name="utility:close"
+                        size="x-small"
+                        alternative-text="Remove"
+                    ></lightning-icon>
+                </button>
+                </div>
+                </div>
+                <img src={file.previewUrl} alt="Preview" width="150" />
+                </div>
+            </template>
+            </div>
+        </template>
+          <!--
+            ondrop={handleDrop}
+            ondragover={handleDragOver}
+            -->
+        
+        </label>
+                                        <lightning-input type="checkbox"
+                                            label="I am not able to supply photo(s) as requested" id="myCheckbox"
+                                            onchange={handleCheckboxChange}>
+                                        </lightning-input>
+                                    </div>
+                                </div>
+
+                                <div class="box">
+                                    <div class="text-main">
+                                        <div class="text-main-box1">
+                                            <p class="text">
+                                                Registration for this recall requires disabling your hair dryer by
+                                                cutting the power cord. In order to validate your registration, please
+                                                submit a photo clearly showing the following:
+                                            </p>
+                                        </div>
+
+                                        <div class="text-main-box2">
+                                            <ul class="text-ul">
+                                                <li>Your hair dryer and its power cord, clearly showing the cord has
+                                                    been cut (required)</li>
+                                                <li>A piece of paper with your last name and the current date clearly
+                                                    visible (required)</li>
+                                                <li>
+                                                    If you still have proof of purchase, please submit that in a
+                                                    separate photo. If you do not have proof of purchase, you will still
+                                                    receive a refund for the average price, which is $24.99”
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+                            </div>
+
+                            <div class="pic-section">
+                                <div class="exp-text">
+                                    <p>
+                                        An example showing the photo requirements is shown below:<br/>
+                                    </p>
+                                </div>
+
+                                <div class="image-section">
+                                    <img src={imageUrl} alt="Example: Air fryer with cut cord and date/last name">
+                                </div>
+                            </div>
+                            <hr>
+
+
+                            <div class="button-container">
+                                <button class="custom-button" onclick={handleRegistration}>
+    Create Registration
+  </button>
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="extra-text">
+                <p class="extra-p">Your refund will be issued as a prepaid virtual Mastercard card or a physical
+                    Mastercard card. Mastercard is a registered trademark, and the circles design is a trademark of
+                    Mastercard International Incorporated. Your use of the prepaid card is governed by the Cardholder
+                    Agreement, and some fees may apply. This is not a gift card. Please note that prepaid cards are
+                    subject to expiration, so pay close attention to the expiration date of the card.</p>
+                <p class="extra-p">If you live in the United States: Use your card everywhere Mastercard is accepted in
+                    the U.S. Issued by The Bancorp Bank, Member FDIC, pursuant to license by Mastercard International
+                    Incorporated.</p>
+                <p class="extra-p">If you live in Canada: Use your card at millions of locations worldwide, everywhere
+                    you see the Mastercard Acceptance Mark. Issued by Peoples Trust Company pursuant to license by
+                    Mastercard International Incorporated.</p>
+            </div>
+        </div>
+
+
+    </div>
+</template>

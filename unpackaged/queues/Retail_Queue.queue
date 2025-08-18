@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Retail Queue</name>
+    <queueMembers>
+        <users>
+            <user>ivette.mendez@spectrumbrands.com</user>
+            <user>jessica.bex@spectrumbrands.com</user>
+            <user>ks3618@contax360.com</user>
+            <user>mason@mantecconsultants.com</user>
+            <user>ms5113@contax360.com</user>
+            <user>rg5012@contax360.com</user>
+            <user>sb8456@contax360.com</user>
+            <user>sc0221@contax360.com</user>
+            <user>victoria.king@spectrumbrands.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Case_Routing</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>ContactRequest</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Macro</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>QuickText</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>SocialPost</sobjectType>
+    </queueSobject>
+</Queue>

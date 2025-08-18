@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>dualzonecs@spectrumbrands.com</email>
+    <name>GMA Replacements</name>
+    <queueMembers>
+        <users>
+            <user>amparo.acevedo@spectrumbrands.com</user>
+            <user>bradley.meiller@spectrumbrands.com</user>
+            <user>brad.meiller@spectrumbrands.com</user>
+            <user>ivette.mendez@spectrumbrands.com</user>
+            <user>jan.aguas@spectrumbrands.com</user>
+            <user>jessica.bex@spectrumbrands.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>BazaarvoiceCases</name>
+    <queueMembers>
+        <users>
+            <user>cg0991@contax360.com</user>
+            <user>ks3618@contax360.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Case_Routing</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

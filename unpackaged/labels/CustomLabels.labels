@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>BypassProcessBuilder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BypassProcessBuilder</shortDescription>
+        <value>0</value>
+    </labels>
+    <labels>
+        <fullName>EmailForAcknowledgement</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailForAcknowledgement</shortDescription>
+        <value>HairdryerRecall@SpectrumBrands.com</value>
+    </labels>
+    <labels>
+        <fullName>EmailForNoFollowUp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailForNoFollowUp</shortDescription>
+        <value>ThirdPartyEscalations@SpectrumBrands.com</value>
+    </labels>
+    <labels>
+        <fullName>Fingerprint_Public_Key</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Fingerprint Public Key</shortDescription>
+        <value>PJMSx92u0frtqSiPrBMj</value>
+    </labels>
+    <labels>
+        <fullName>LA_OfflineSupport_SupportForm_HeaderText_04I3i000000XnGT_9447663</fullName>
+        <categories>Snap-ins</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LA_OfflineSupport_SupportForm_HeaderText_04I3i000000XnGT_9447663</shortDescription>
+        <value>Contact Us - After Hours Chat</value>
+    </labels>
+    <labels>
+        <fullName>LA_OfflineSupport_SupportForm_HeaderText_04I3i000000XnGn_9443219</fullName>
+        <categories>Snap-ins</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LA_OfflineSupport_SupportForm_HeaderText_04I3i000000XnGn_9443219</shortDescription>
+        <value>Contact Us - After Hours</value>
+    </labels>
+    <labels>
+        <fullName>LA_OfflineSupport_SupportForm_HeaderText_04I3i000000XnGs_7233432</fullName>
+        <categories>Snap-ins</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LA_OfflineSupport_SupportForm_HeaderText_04I3i000000XnGs_7233432</shortDescription>
+        <value>Contact us - After hours</value>
+    </labels>
+    <labels>
+        <fullName>LA_OfflineSupport_SupportForm_HeaderText_04I3i000000XnGx_6318074</fullName>
+        <categories>Snap-ins</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LA_OfflineSupport_SupportForm_HeaderText_04I3i000000XnGx_6318074</shortDescription>
+        <value>Contact us - After hours</value>
+    </labels>
+    <labels>
+        <fullName>RamingtonSupportEmailAddresses</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RamingtonSupportEmailAddresses</shortDescription>
+        <value>contactus@remingtonproducts.com,remconmbx@spectrumbrands.com</value>
+    </labels>
+    <labels>
+        <fullName>ReasonForContactForCustomer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReasonForContactForCustomer</shortDescription>
+        <value>Address Change,Billing Inquiry Other,Billing Inquiry Payment,Complaint - Customer Service,Compliment - Customer Service,Duplicate Order/Shipment,Inquiry,Order Status,Order Cancellation,Order Incorrect Item Received,Order Non Delivery,Other,Parts-broken (upon arrival),Parts-missing/incomplete,Parts-Order,Injury,Property Damage,Complaint-Quality,Product Issue,Money Back Guarantee,Product Question,Product Idea,Product Registration,Recall,Recipe Issue,Return not processed</value>
+    </labels>
+    <labels>
+        <fullName>Site_Link_Case_Follow_Up_Form</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Site Link Case Follow Up Form</shortDescription>
+        <value>https://hpcsupport.spectrumbrands.com/caseform?ticket=</value>
+    </labels>
+    <labels>
+        <fullName>Site_Link_New_Case_Submit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Site Link New Case Submit</shortDescription>
+        <value>https://hpcsupport.spectrumbrands.com/NewRequest</value>
+    </labels>
+    <labels>
+        <fullName>State_List</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>State List</shortDescription>
+        <value>AL:Alabama, AK:Alaska, AZ:Arizona, AR:Arkansas, CA:California, CZ:Canal Zone, CO:Colorado, CT:Connecticut, DE:Delaware, DC:District of Columbia, FL:Florida, GA:Georgia, GU:Guam, HI:Hawaii, ID:Idaho, IL:Illinois, IN:Indiana, IA:Iowa, KS:Kansas, KY:Kentucky, LA:Louisiana, ME:Maine, MD:Maryland, MA:Massachusetts, MI:Michigan, MN:Minnesota, MS:Mississippi, MO:Missouri, MT:Montana, NE:Nebraska, NV:Nevada, NH:New Hampshire, NJ:New Jersey, NM:New Mexico, NY:New York, NC:North Carolina, ND:North Dakota, OH:Ohio, OK:Oklahoma, OR:Oregon, PA:Pennsylvania, PR:Puerto Rico, RI:Rhode Island, SC:South Carolina, SD:South Dakota, TN:Tennessee, TX:Texas, UT:Utah, VT:Vermont, VI:Virgin Islands, VA:Virginia, WA:Washington, WV:West Virginia, WI:Wisconsin, WY:Wyoming, AB:Alberta, BC:British Columbia, MB:Manitoba, NB:New Brunswick, NL:Newfoundland and Labrador, NT:Northwest Territories, NS:Nova Scotia, NU:Nunavut, ON:Ontario, PE:Prince Edward Island, QC:Quebec, SK:Saskatchewan, YT:Yukon</value>
+    </labels>
+</CustomLabels>

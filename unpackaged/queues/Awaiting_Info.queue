@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Awaiting Info</name>
+    <queueMembers>
+        <users>
+            <user>ac0849@contax360.com</user>
+            <user>aj0402@contax360.com</user>
+            <user>bb0455@contax360.com</user>
+            <user>ct0656@contax360.com</user>
+            <user>cc1410@contax360.com</user>
+            <user>cm0430@contax360.com</user>
+            <user>gc0214@contax360.com</user>
+            <user>ig2531-spectrum@contax360.com</user>
+            <user>jg1532@contax360.com</user>
+            <user>jg1532-spectrum@contax360.com</user>
+            <user>jb4565@contax360.com</user>
+            <user>kk0783@contax360.com</user>
+            <user>kw0254@contax360.com</user>
+            <user>lb0400@contax360.com</user>
+            <user>ld3003@contax360.com</user>
+            <user>ms0605@contax360.com</user>
+            <user>mg0560@contax360.com</user>
+            <user>mb1668@contax360.com</user>
+            <user>ng0097@contax360.com</user>
+            <user>ow0090@contax360.com</user>
+            <user>rs0607@contax360.com</user>
+            <user>ss0812@contax360.com</user>
+            <user>sd0917@contax360.com</user>
+            <user>sb0325@contax360.com</user>
+            <user>sb8456@contax360.com</user>
+            <user>sg0316@contax360.com</user>
+            <user>sp0606@contax360.com</user>
+            <user>ts1282@contax360.com</user>
+            <user>th0128@contax360.com</user>
+            <user>vb0602@contax360.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

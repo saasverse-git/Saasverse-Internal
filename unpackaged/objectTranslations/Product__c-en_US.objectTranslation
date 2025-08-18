@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product Detail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Brand --></label>
+        <name>Brand__c</name>
+        <picklistValues>
+            <masterLabel>Baby Cakes</masterLabel>
+            <translation><!-- Baby Cakes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Black &amp; Decker</masterLabel>
+            <translation><!-- Black &amp; Decker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Breadman</masterLabel>
+            <translation><!-- Breadman --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cooks</masterLabel>
+            <translation><!-- Cooks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Copper Chef</masterLabel>
+            <translation><!-- Copper Chef --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emeril Lagasse</masterLabel>
+            <translation><!-- Emeril Lagasse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Farberware</masterLabel>
+            <translation><!-- Farberware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>George Foreman</masterLabel>
+            <translation><!-- George Foreman --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Juiceman</masterLabel>
+            <translation><!-- Juiceman --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LUMABELLA</masterLabel>
+            <translation><!-- LUMABELLA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Luma Bella</masterLabel>
+            <translation><!-- Luma Bella --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maxim</masterLabel>
+            <translation><!-- Maxim --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Melitta</masterLabel>
+            <translation><!-- Melitta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PowerXL</masterLabel>
+            <translation><!-- PowerXL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REMINGTON</masterLabel>
+            <translation><!-- REMINGTON --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russell Hobbs</masterLabel>
+            <translation><!-- Russell Hobbs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Toastmaster</masterLabel>
+            <translation><!-- Toastmaster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Westinghouse</masterLabel>
+            <translation><!-- Westinghouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windmere</masterLabel>
+            <translation><!-- Windmere --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+        <picklistValues>
+            <masterLabel>Appliance Home</masterLabel>
+            <translation><!-- Appliance Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Care</masterLabel>
+            <translation><!-- Personal Care --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Model Number --></label>
+        <name>Model_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Category --></label>
+        <name>Product_Category__c</name>
+        <picklistValues>
+            <masterLabel>Accessories</masterLabel>
+            <translation><!-- Accessories --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beauty and Wellness</masterLabel>
+            <translation><!-- Beauty and Wellness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beverage</masterLabel>
+            <translation><!-- Beverage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cooking</masterLabel>
+            <translation><!-- Cooking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Female Grooming</masterLabel>
+            <translation><!-- Female Grooming --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Female Shave</masterLabel>
+            <translation><!-- Female Shave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Food Preparation</masterLabel>
+            <translation><!-- Food Preparation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Garment</masterLabel>
+            <translation><!-- Garment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grills</masterLabel>
+            <translation><!-- Grills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haircare</masterLabel>
+            <translation><!-- Haircare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male Grooming</masterLabel>
+            <translation><!-- Male Grooming --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male Shave</masterLabel>
+            <translation><!-- Male Shave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spare Parts</masterLabel>
+            <translation><!-- Spare Parts --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Line --></label>
+        <name>Product_Line__c</name>
+        <picklistValues>
+            <masterLabel>AFTO</masterLabel>
+            <translation><!-- AFTO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air Fry Ovens</masterLabel>
+            <translation><!-- Air Fry Ovens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air-Styler</masterLabel>
+            <translation><!-- Air-Styler --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bikini Trimmer</masterLabel>
+            <translation><!-- Bikini Trimmer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blenders</masterLabel>
+            <translation><!-- Blenders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Body Groomer</masterLabel>
+            <translation><!-- Body Groomer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bread Makers</masterLabel>
+            <translation><!-- Bread Makers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brushes</masterLabel>
+            <translation><!-- Brushes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Can Openers</masterLabel>
+            <translation><!-- Can Openers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classic Irons</masterLabel>
+            <translation><!-- Classic Irons --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coffee Grinders</masterLabel>
+            <translation><!-- Coffee Grinders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coffee Makers</masterLabel>
+            <translation><!-- Coffee Makers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Container Cooking - Other</masterLabel>
+            <translation><!-- Container Cooking - Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Crepe Makers</masterLabel>
+            <translation><!-- Crepe Makers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Curling Iron</masterLabel>
+            <translation><!-- Curling Iron --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deep Fryers</masterLabel>
+            <translation><!-- Deep Fryers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Detail Trimmer</masterLabel>
+            <translation><!-- Detail Trimmer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Steam Irons</masterLabel>
+            <translation><!-- Digital Steam Irons --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dryer</masterLabel>
+            <translation><!-- Dryer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dual Foil</masterLabel>
+            <translation><!-- Dual Foil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electric Knives</masterLabel>
+            <translation><!-- Electric Knives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Epilator</masterLabel>
+            <translation><!-- Epilator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facial Brush</masterLabel>
+            <translation><!-- Facial Brush --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fan Heater</masterLabel>
+            <translation><!-- Fan Heater --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foil</masterLabel>
+            <translation><!-- Foil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Food Processors</masterLabel>
+            <translation><!-- Food Processors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Food Steamers</masterLabel>
+            <translation><!-- Food Steamers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Griddles/Skillets</masterLabel>
+            <translation><!-- Griddles/Skillets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grills - Charcoal</masterLabel>
+            <translation><!-- Grills - Charcoal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grills - Fixed Plate</masterLabel>
+            <translation><!-- Grills - Fixed Plate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grills - Indoor/Outdoor</masterLabel>
+            <translation><!-- Grills - Indoor/Outdoor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grills - Other</masterLabel>
+            <translation><!-- Grills - Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grills - Panini Maker</masterLabel>
+            <translation><!-- Grills - Panini Maker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grills - Propane</masterLabel>
+            <translation><!-- Grills - Propane --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grills - Removable Plate</masterLabel>
+            <translation><!-- Grills - Removable Plate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grills - Smokeless</masterLabel>
+            <translation><!-- Grills - Smokeless --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hair Clipper</masterLabel>
+            <translation><!-- Hair Clipper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haircare Accessories</masterLabel>
+            <translation><!-- Haircare Accessories --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hand Choppers</masterLabel>
+            <translation><!-- Hand Choppers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hand Mixers</masterLabel>
+            <translation><!-- Hand Mixers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Handheld Steamers</masterLabel>
+            <translation><!-- Handheld Steamers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Fryers</masterLabel>
+            <translation><!-- Health Fryers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jar Openers</masterLabel>
+            <translation><!-- Jar Openers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Juicers - Citrus</masterLabel>
+            <translation><!-- Juicers - Citrus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Juicers - Extractor</masterLabel>
+            <translation><!-- Juicers - Extractor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kettles</masterLabel>
+            <translation><!-- Kettles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manicure</masterLabel>
+            <translation><!-- Manicure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mens Foil Replacement</masterLabel>
+            <translation><!-- Mens Foil Replacement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mens Rotary Replacement</masterLabel>
+            <translation><!-- Mens Rotary Replacement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Microwaves</masterLabel>
+            <translation><!-- Microwaves --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi Cooker</masterLabel>
+            <translation><!-- Multi Cooker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi-Cookers</masterLabel>
+            <translation><!-- Multi-Cookers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mustache / Beard Trimmer</masterLabel>
+            <translation><!-- Mustache / Beard Trimmer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nose / Ear Trimmer</masterLabel>
+            <translation><!-- Nose / Ear Trimmer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other - Container Cooking</masterLabel>
+            <translation><!-- Other - Container Cooking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other - Surface Cooking</masterLabel>
+            <translation><!-- Other - Surface Cooking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pasta Makers</masterLabel>
+            <translation><!-- Pasta Makers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percolators</masterLabel>
+            <translation><!-- Percolators --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Groomer</masterLabel>
+            <translation><!-- Personal Groomer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pizza Ovens</masterLabel>
+            <translation><!-- Pizza Ovens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power Adapter</masterLabel>
+            <translation><!-- Power Adapter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pressure Cookers</masterLabel>
+            <translation><!-- Pressure Cookers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rice Cookers</masterLabel>
+            <translation><!-- Rice Cookers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rotary Shavers</masterLabel>
+            <translation><!-- Rotary Shavers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S&amp;P Grinders</masterLabel>
+            <translation><!-- S&amp;P Grinders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Setter</masterLabel>
+            <translation><!-- Setter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Foil</masterLabel>
+            <translation><!-- Single Foil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slow Cookers</masterLabel>
+            <translation><!-- Slow Cookers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specialty</masterLabel>
+            <translation><!-- Specialty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steam Irons</masterLabel>
+            <translation><!-- Steam Irons --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steam Mop</masterLabel>
+            <translation><!-- Steam Mop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Straightener</masterLabel>
+            <translation><!-- Straightener --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Surface Cooking - Other</masterLabel>
+            <translation><!-- Surface Cooking - Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Toaster Ovens</masterLabel>
+            <translation><!-- Toaster Ovens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Toasters</masterLabel>
+            <translation><!-- Toasters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vacuum Cleaners</masterLabel>
+            <translation><!-- Vacuum Cleaners --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vacuum Sealers</masterLabel>
+            <translation><!-- Vacuum Sealers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waffle/Sandwich Makers</masterLabel>
+            <translation><!-- Waffle/Sandwich Makers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Womens Foil Replacement</masterLabel>
+            <translation><!-- Womens Foil Replacement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yoghurt Makers</masterLabel>
+            <translation><!-- Yoghurt Makers --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

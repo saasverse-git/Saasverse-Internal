@@ -1,0 +1,33 @@
+<template>
+    <template if:true={showTemplate}>
+        <div class="success-card" if:false={duplicateRec}>
+            <div class="success-box">
+                <h2>Thank You!</h2>
+                <div class="success-message">
+                    <strong>Your case {caseNumber} has been registered successfully.</strong>
+                </div>
+                <p>We have received your case details.</p>
+                <p>Our support team will contact you soon.</p>
+            </div>
+        </div>
+        <div class="success-card" if:true={duplicateRec}>
+            <div class="success-box">
+                <h2>Thank You!</h2>
+                <div class="success-message">
+                    <strong>Your case has been registered successfully.</strong>
+                </div>
+                <p>We have received your case details.</p>
+                <p>Our support team will contact you soon.</p>
+            </div>
+        </div>
+    </template>
+    <template if:false={showTemplate}>
+        <div class="success-card">
+            <div class="failed-box">
+                <div class="success-message">
+                    <strong>ACCESS DENIED!</strong>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

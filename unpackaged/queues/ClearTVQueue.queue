@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>ZClearTVQueuedonotuse</name>
+    <queueMembers>
+        <users>
+            <user>frank@mantecconsultants.com</user>
+            <user>max@mantecconsultants.com</user>
+            <user>aaron@mantecconsultants.com</user>
+            <user>davidloya.tristar@outlook.com</user>
+            <user>debjohnson.spectrum@allegroresponse.net</user>
+            <user>melissasototristar@outlook.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>ClearTVRoutConfig</queueRoutingConfig>
+</Queue>

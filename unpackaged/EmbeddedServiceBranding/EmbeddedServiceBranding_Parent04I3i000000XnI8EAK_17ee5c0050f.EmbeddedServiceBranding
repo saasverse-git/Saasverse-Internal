@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmbeddedServiceBranding xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contrastInvertedColor>#ffffff</contrastInvertedColor>
+    <contrastPrimaryColor>#333333</contrastPrimaryColor>
+    <embeddedServiceConfig>Chat_Smokeless_Grill</embeddedServiceConfig>
+    <font>Arial</font>
+    <height>0</height>
+    <masterLabel>EmbeddedServiceBranding_Parent04I3i000000XnI8EAK_17ee5c0050f</masterLabel>
+    <navBarColor>#005290</navBarColor>
+    <navBarTextColor>#ffffff</navBarTextColor>
+    <primaryColor>#005290</primaryColor>
+    <secondaryColor>#005290</secondaryColor>
+    <secondaryNavBarColor>#cb2b19</secondaryNavBarColor>
+    <width>0</width>
+</EmbeddedServiceBranding>

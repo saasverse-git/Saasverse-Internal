@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Access</value>
+        </caseValues>
+        <name>case_access</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Access Level</value>
+        </caseValues>
+        <name>case_access_level</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Account</value>
+        </caseValues>
+        <name>case_account</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Alert</value>
+        </caseValues>
+        <name>case_alert</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Article</value>
+        </caseValues>
+        <name>case_article</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Article ID</value>
+        </caseValues>
+        <name>case_article_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Asset</value>
+        </caseValues>
+        <name>case_asset</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Assignment Rule</value>
+        </caseValues>
+        <name>case_assignment_rule</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Capture</value>
+        </caseValues>
+        <name>case_capture</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Capture Information</value>
+        </caseValues>
+        <name>case_capture_information</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Capture Page</value>
+        </caseValues>
+        <name>case_capture_page</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Close</value>
+        </caseValues>
+        <name>case_close</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Closed</value>
+        </caseValues>
+        <name>case_closed</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Closure</value>
+        </caseValues>
+        <name>case_closure</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Comment</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Ticket Comments</value>
+        </caseValues>
+        <name>case_comment</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Comment ID</value>
+        </caseValues>
+        <name>case_comment_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Comment Information</value>
+        </caseValues>
+        <name>case_comment_information</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Company</value>
+        </caseValues>
+        <name>case_company</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Contact</value>
+        </caseValues>
+        <name>case_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Contact Role</value>
+        </caseValues>
+        <name>case_contact_role</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Created Date</value>
+        </caseValues>
+        <name>case_created_date</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Creator</value>
+        </caseValues>
+        <name>case_creator</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Currency</value>
+        </caseValues>
+        <name>case_currency</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Custom Field</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Ticket Custom Fields</value>
+        </caseValues>
+        <name>case_custom_field</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Description</value>
+        </caseValues>
+        <name>case_description</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Detail</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Ticket Details</value>
+        </caseValues>
+        <name>case_detail</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Detail Link</value>
+        </caseValues>
+        <name>case_detail_link</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Division</value>
+        </caseValues>
+        <name>case_division</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Edit</value>
+        </caseValues>
+        <name>case_edit</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Email</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Ticket Emails</value>
+        </caseValues>
+        <name>case_email</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Feed</value>
+        </caseValues>
+        <name>case_feed</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Field</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Ticket Fields</value>
+        </caseValues>
+        <name>case_field</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket History</value>
+        </caseValues>
+        <name>case_history</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket History ID</value>
+        </caseValues>
+        <name>case_history_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket History Info</value>
+        </caseValues>
+        <name>case_history_info</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket History Owner</value>
+        </caseValues>
+        <name>case_history_owner</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket History Report</value>
+        </caseValues>
+        <name>case_history_report</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket History Status</value>
+        </caseValues>
+        <name>case_history_status</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket ID</value>
+        </caseValues>
+        <name>case_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Information</value>
+        </caseValues>
+        <name>case_information</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Last Modified</value>
+        </caseValues>
+        <name>case_last_modified</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Lifecycle</value>
+        </caseValues>
+        <name>case_lifecycle</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Lifecycle Report</value>
+        </caseValues>
+        <name>case_lifecycle_report</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket List</value>
+        </caseValues>
+        <name>case_list</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Milestone</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Ticket Milestones</value>
+        </caseValues>
+        <name>case_milestone</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Name</value>
+        </caseValues>
+        <name>case_name</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Number</value>
+        </caseValues>
+        <name>case_number</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Origin</value>
+        </caseValues>
+        <name>case_origin</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Owner</value>
+        </caseValues>
+        <name>case_owner</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Owner Alias</value>
+        </caseValues>
+        <name>case_owner_alias</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Owner Role</value>
+        </caseValues>
+        <name>case_owner_role</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Phone</value>
+        </caseValues>
+        <name>case_phone</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Picklist</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Ticket Picklists</value>
+        </caseValues>
+        <name>case_picklist</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Priority</value>
+        </caseValues>
+        <name>case_priority</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Queue</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Ticket Queues</value>
+        </caseValues>
+        <name>case_queue</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Reason</value>
+        </caseValues>
+        <name>case_reason</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Record Type</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Ticket Record Types</value>
+        </caseValues>
+        <name>case_record_type</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Record Type ID</value>
+        </caseValues>
+        <name>case_record_type_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Report</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Ticket Reports</value>
+        </caseValues>
+        <name>case_report</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Solution</value>
+        </caseValues>
+        <name>case_solution</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Solution ID</value>
+        </caseValues>
+        <name>case_solution_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Source</value>
+        </caseValues>
+        <name>case_source</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Splash Page</value>
+        </caseValues>
+        <name>case_splash_page</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Stage ID</value>
+        </caseValues>
+        <name>case_stage_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Status</value>
+        </caseValues>
+        <name>case_status</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Subject</value>
+        </caseValues>
+        <name>case_subject</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Team</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Ticket Teams</value>
+        </caseValues>
+        <name>case_team</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Team Member</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Ticket Team Members</value>
+        </caseValues>
+        <name>case_team_member</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Team Member Role</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Ticket Team Member Roles</value>
+        </caseValues>
+        <name>case_team_member_role</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Team Record</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Ticket Team Records</value>
+        </caseValues>
+        <name>case_team_record</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Type</value>
+        </caseValues>
+        <name>case_type</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket View</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Ticket Views</value>
+        </caseValues>
+        <name>case_view</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Tickets Detail Page</value>
+        </caseValues>
+        <name>cases_detail_page</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Tickets Tab</value>
+        </caseValues>
+        <name>cases_tab</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Related Ticket</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Related Tickets</value>
+        </caseValues>
+        <name>child_case</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Ticket Note</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Ticket Notes</value>
+        </caseValues>
+        <name>feed_filter_case_note</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Parent Ticket</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Parent Tickets</value>
+        </caseValues>
+        <name>parent_case</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Parent Ticket ID</value>
+        </caseValues>
+        <name>parent_case_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Write Ticket Note</value>
+        </caseValues>
+        <name>publisher_private_answer</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>View Ticket Details</value>
+        </caseValues>
+        <name>publisher_view_details</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Email</value>
+        </caseValues>
+        <name>web_email_case</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Name</value>
+        </caseValues>
+        <name>web_name_case</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <layouts>
+        <layout>Feedbased Case layout</layout>
+        <sections>
+            <label><!-- Archived data --></label>
+            <section>Archived data</section>
+        </sections>
+        <sections>
+            <label><!-- Bazaarvoice --></label>
+            <section>Bazaarvoice</section>
+        </sections>
+        <sections>
+            <label><!-- PIR Information --></label>
+            <section>PIR Information</section>
+        </sections>
+        <sections>
+            <label><!-- PIR Questions --></label>
+            <section>PIR Questions</section>
+        </sections>
+        <sections>
+            <label><!-- PMD Information --></label>
+            <section>PMD Information</section>
+        </sections>
+        <sections>
+            <label><!-- Product Notes --></label>
+            <section>Product Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Product Registration --></label>
+            <section>Product Registration</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>International test</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>PMD User</layout>
+        <sections>
+            <label><!-- PIR Information --></label>
+            <section>PIR Information</section>
+        </sections>
+        <sections>
+            <label><!-- PMD Information --></label>
+            <section>PMD Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Chat Details --></label>
+        <name>Chat_Details</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- CloseCaseLightning --></label>
+        <name>CloseCaseLightning</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Email --></label>
+        <name>Email</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Export as PDF --></label>
+        <name>Export_as_PDF</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewChildCase --></label>
+        <name>NewChildCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Ticket Comment --></label>
+        <name>Ticket_Comment</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Ticket Summary --></label>
+        <name>Ticket_Summary</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Ticket Test --></label>
+        <name>Ticket_Test</name>
+    </quickActions>
+</CustomObjectTranslation>

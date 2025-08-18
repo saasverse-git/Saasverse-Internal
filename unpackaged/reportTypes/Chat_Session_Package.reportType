@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject></baseObject>
+    <category>cases</category>
+    <deployed>true</deployed>
+    <description>came with the package</description>
+    <label>Chat Session Package</label>
+    <sections>
+        <masterLabel>Chat Sessions</masterLabel>
+    </sections>
+</ReportType>

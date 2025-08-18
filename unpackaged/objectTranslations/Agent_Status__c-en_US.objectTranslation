@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Agent Status</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Agent Status</value>
+    </caseValues>
+    <fields>
+        <label><!-- Agent --></label>
+        <name>Agent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel Type --></label>
+        <name>Channel_Type__c</name>
+        <picklistValues>
+            <masterLabel>Chatter</masterLabel>
+            <translation><!-- Chatter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation><!-- Phone --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Current Interaction --></label>
+        <name>Current_Interaction__c</name>
+        <relationshipLabel><!-- Agent Status --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Duration (minutes) --></label>
+        <name>Duration_Minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Skill / Queue --></label>
+        <name>Skill_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status End Time --></label>
+        <name>Status_End_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Start Time --></label>
+        <name>Status_Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Offline</masterLabel>
+            <translation><!-- Offline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Call</masterLabel>
+            <translation><!-- On Call --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PresenceUserConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <profiles>
+            <profile>CCS Internal</profile>
+        </profiles>
+    </assignments>
+    <capacity>2</capacity>
+    <declineReasons>I_m_busy_with_high_priority_task</declineReasons>
+    <enableAutoAccept>false</enableAutoAccept>
+    <enableDecline>true</enableDecline>
+    <enableDeclineReason>true</enableDeclineReason>
+    <enableDisconnectSound>true</enableDisconnectSound>
+    <enableRequestSound>true</enableRequestSound>
+    <label>Test for skill based routing</label>
+</PresenceUserConfig>

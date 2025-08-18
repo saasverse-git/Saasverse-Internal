@@ -1,0 +1,3 @@
+<apex:page standardController="EmailMessage" renderAs="pdf" applyBodyTag="false">
+<apex:detail />
+</apex:page>

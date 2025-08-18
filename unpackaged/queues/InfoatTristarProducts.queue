@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>InfoatTristarProducts</name>
+    <queueMembers>
+        <users>
+            <user>amparo.acevedo@spectrumbrands.com</user>
+            <user>astrid.hunton@spectrumbrands.com</user>
+            <user>carlyo@tristarproductsinc.com</user>
+            <user>ivette.mendez@spectrumbrands.com</user>
+            <user>jamieg@tristarproductsinc.com</user>
+            <user>michelem@tristarproductsinc.com</user>
+            <user>rosac@tristarproductsinc.com</user>
+            <user>stephaniem@tristarproductsinc.com</user>
+            <user>victoria.king@spectrumbrands.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Case_Routing</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>ContactRequest</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Macro</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>QuickText</sobjectType>
+    </queueSobject>
+</Queue>

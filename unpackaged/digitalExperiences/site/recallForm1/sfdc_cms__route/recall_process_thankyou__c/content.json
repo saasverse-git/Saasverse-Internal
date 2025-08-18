@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "recall-process-thankyou",
+  "contentBody" : {
+    "activeViewId" : "recall_process_thankyou",
+    "configurationTags" : [ ],
+    "pageAccess" : "Public",
+    "routeType" : "custom-recall-process-thankyou",
+    "urlPrefix" : "recall-process-thankyou"
+  },
+  "urlName" : "recall-process-thankyou"
+}

@@ -1,0 +1,471 @@
+<apex:page cache="false" controller="NewCaseCreationPageController" showHeader="false" standardStylesheets="false" docType="html-5.0">
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <title>New Case Submission</title>
+
+            <style>
+                body {
+                    background: #f0f2f5;
+                    font-family: 'Arial', sans-serif;
+                    padding: 30px 15px;
+                }
+                .case-form {
+                    background: #fff;
+                    padding: 40px;
+                    border-radius: 10px;
+                    max-width: 680px;
+                    margin: auto;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+                }
+                .case-form h2 {
+                    text-align: center;
+                    color: #333;
+                    margin-bottom: 25px;
+                }
+                .form-group {
+                    margin-bottom: 20px;
+                }
+                label {
+                    display: block;
+                    margin-bottom: 6px;
+                    font-weight: bold;
+                    color: #444;
+                }
+                input, select, textarea {
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 6px;
+                    font-size: 14px;
+                }
+                .btn-submit {
+                    background: #0070d2;
+                    color: white;
+                    padding: 14px;
+                    border: none;
+                    width: 100%;
+                    border-radius: 6px;
+                    font-size: 16px;
+                    cursor: pointer;
+                }
+                .btn-submit:hover {
+                    background: #005bb5;
+                }
+                .loader {
+                    position: fixed;
+                    top: 0; left: 0;
+                    width: 100%; height: 100%;
+                    background: rgba(255,255,255,0.7);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 9999;
+                }
+                .spinner {
+                    border: 6px solid #f3f3f3;
+                    border-top: 6px solid #3498db;
+                    border-radius: 50%;
+                    width: 60px; height: 60px;
+                    animation: spin 1s linear infinite;
+                }
+                .custom-file-input {
+                    display: block;
+                    width: 100%;
+                    padding: 8px;
+                    border-radius: 4px;
+                    border: 1px solid #ccc;
+                }
+
+                .tooltip-icon {
+                    display: inline-block;
+                    margin-left: 5px;
+                    cursor: pointer;
+                    position: relative;
+                    color: #0070d2;
+                    font-weight: bold;
+                }
+
+                .tooltip-text {
+                    visibility: hidden;
+                    opacity: 0;
+                    width: 220px;
+                    background-color: #333;
+                    color: #fff;
+                    text-align: left;
+                    border-radius: 4px;
+                    padding: 6px 10px;
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 125%;
+                    left: -90px;
+                    transition: opacity 0.3s;
+                    font-size: 12px;
+                    white-space: normal;
+                }
+
+                .tooltip-icon:hover .tooltip-text {
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+            </style>
+
+            <script>
+                let modelDataCache = {};
+
+                let selectedFiles = [];
+
+                function handleFiles(newFiles) {
+                    const container = document.getElementById('fileFieldsContainer');
+                    const fileList = document.getElementById('fileList');
+                    const fileInput = document.getElementById('fileInput');
+                    const MAX_FILE_SIZE = 1 * 1024 * 1024 * 1024; // 2GB
+                    //const MAX_FILE_SIZE = 45 * 1024 * 1024; // 45MB
+                    
+                    const validFiles = [];
+                    let hasRejectedFiles = false;
+                    
+                    Array.from(newFiles).forEach(newFile => {
+                        if (newFile.size > MAX_FILE_SIZE) {
+                            alert(`File "${newFile.name}" exceeds the 1GB size limit and will not be uploaded.`);
+                            hasRejectedFiles = true;
+                            return; // Skip this file
+                        }
+                        
+                        // Check if file already exists
+                        if (!selectedFiles.find(f => f.name === newFile.name && f.size === newFile.size)) {
+                            validFiles.push(newFile);
+                        }
+                    });
+                    
+                    // Add only valid files to selectedFiles
+                    selectedFiles.push(...validFiles);
+                    
+                    // If there were rejected files, clear and update the file input
+                    if (hasRejectedFiles) {
+                        const dataTransfer = new DataTransfer();
+                        selectedFiles.forEach(file => dataTransfer.items.add(file));
+                        fileInput.files = dataTransfer.files;
+                    }
+                    
+                    // Clear containers
+                    container.innerHTML = '';
+                    fileList.innerHTML = '';
+                    
+                    // Process only the files that are in selectedFiles
+                    selectedFiles.forEach((file, index) => {
+                        const reader = new FileReader();
+                        
+                        reader.onload = function(e) {
+                            const base64 = e.target.result.split(',')[1];
+                            
+                            // Create hidden fields
+                            const fileNameInput = document.createElement('input');
+                            fileNameInput.type = 'hidden';
+                            fileNameInput.name = 'fileName' + index;
+                            fileNameInput.value = file.name;
+                            
+                            const fileContentInput = document.createElement('textarea');
+                            fileContentInput.style.display = 'none';
+                            fileContentInput.name = 'fileContent' + index;
+                            fileContentInput.value = base64;
+                            
+                            container.appendChild(fileNameInput);
+                            container.appendChild(fileContentInput);
+                            
+                            // Create UI display with remove button
+                            const listItem = document.createElement('div');
+                            listItem.style.marginBottom = '6px';
+                            
+                            const fileLabel = document.createElement('span');
+                            fileLabel.textContent = file.name;
+                            fileLabel.style.marginRight = '10px';
+                            
+                            const removeBtn = document.createElement('button');
+                            removeBtn.textContent = 'Remove';
+                            removeBtn.type = 'button';
+                            removeBtn.style.color = 'red';
+                            removeBtn.style.cursor = 'pointer';
+                            removeBtn.style.border = 'none';
+                            removeBtn.style.background = 'transparent';
+                            
+                            removeBtn.onclick = function() {
+                                // Find the current index of this file (important for dynamic removal)
+                                const currentIndex = selectedFiles.findIndex(f => f === file);
+                                if (currentIndex > -1) {
+                                    selectedFiles.splice(currentIndex, 1);
+                                    updateFileInputAndDisplay();
+                                }
+                            };
+                            
+                            listItem.appendChild(fileLabel);
+                            listItem.appendChild(removeBtn);
+                            fileList.appendChild(listItem);
+                        };
+                        
+                        reader.readAsDataURL(file);
+                    });
+                }
+
+                function updateFileInputAndDisplay() {
+                    const input = document.getElementById('fileInput');
+                    const dataTransfer = new DataTransfer();
+                    
+                    selectedFiles.forEach(file => dataTransfer.items.add(file));
+                    input.files = dataTransfer.files;
+                    
+                    handleFiles(input.files); // Refresh UI
+                }
+
+                function validatePicklist(id) {
+                    let field = document.getElementById(id);
+                    let errorSpan = document.getElementById(id + 'Error');
+                    if (!field.value || field.value.includes('-- Select')) {
+                        field.style.border = '1px solid red';
+                        errorSpan.innerText = 'This field is required.';
+                    } else {
+                        field.style.border = '';
+                        errorSpan.innerText = '';
+                    }
+                }
+
+                function validateBeforeSubmit() {
+                    validatePicklist('brand');
+                    validatePicklist('product');
+                    validatePicklist('model');
+                    validatePicklist('reason');
+
+                    let hasError = ['brand', 'product', 'model', 'reason'].some(id => {
+                        return document.getElementById(id + 'Error').innerText !== '';
+                    });
+
+                    return !hasError;
+                }
+
+                function populateProductDropdown() {
+                    const brand = document.getElementById("brand").value;
+                    const productDropdown = document.getElementById("product");
+                    productDropdown.innerHTML = '<option value="">-- Select Product --</option>';
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.NewCaseCreationPageController.getModelMap}',
+                        brand,
+                        function(result, event) {
+                            if (event.status && result) {
+                                modelDataCache = result;
+                                const productSet = new Set();
+                                for (let productLine in result) {
+                                    productSet.add(productLine);
+                                }
+                                productSet.forEach(function(product) {
+                                    const option = document.createElement('option');
+                                    option.value = product;
+                                    option.textContent = product;
+                                    productDropdown.appendChild(option);
+                                });
+                                const otherOption = document.createElement('option');
+                                otherOption.value = 'Other';
+                                otherOption.textContent = 'Product not listed here';
+                                productDropdown.appendChild(otherOption);
+                            }
+                        }
+                    );
+                }
+
+                function populateModelNo() {
+                    const selectedProductLine = document.getElementById("product").value;
+                    const modelDropdown = document.getElementById("model");
+
+                    modelDropdown.innerHTML = '<option value="" disabled="disabled" selected="selected"  >-- Select Model --</option>';
+
+                    if (selectedProductLine === 'Other') {
+                        const otherOption = document.createElement('option');
+                        otherOption.value = 'Model Not Available';
+                        otherOption.textContent = 'Model Not Available';
+                        modelDropdown.appendChild(otherOption);
+                        modelDropdown.value = 'Model Not Available';
+                        return;
+                    }
+
+                    const models = modelDataCache[selectedProductLine];
+
+                    models.forEach(function(modelNumber) {
+                        const option = document.createElement('option');
+                        option.value = modelNumber;
+                        option.textContent = modelNumber;
+                        modelDropdown.appendChild(option);
+                    });
+
+                    const otherOption = document.createElement('option');
+                    otherOption.value = 'Other';
+                    otherOption.textContent = 'Model not listed here';
+                    modelDropdown.appendChild(otherOption);
+                }
+
+                function populateReasonOptions() {
+                    const reasonDropdown = document.getElementById("reason");
+                    reasonDropdown.innerHTML = '<option value="" disabled selected>-- Select Reason --</option>';
+
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.NewCaseCreationPageController.getReasonForContactOptions}',
+                        function(result, event) {
+                            if (event.status && result) {
+                                result.forEach(function(reason) {
+                                    const option = document.createElement("option");
+                                    option.value = reason;
+                                    option.textContent = reason;
+                                    reasonDropdown.appendChild(option);
+                                });
+                            }
+                        }
+                    );
+                }
+
+                function populateBrandDropdown() {
+                    const brandDropdown = document.getElementById("brand");
+                    brandDropdown.innerHTML = '<option value="" disabled selected>-- Select Brand --</option>';
+
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.NewCaseCreationPageController.getBrandOptions}',
+                        function(result, event) {
+                            if (event.status && result) {
+                                result.forEach(function(brand) {
+                                    const option = document.createElement("option");
+                                    option.value = brand;
+                                    option.textContent = brand;
+                                    brandDropdown.appendChild(option);
+                                });
+
+                                // Add 'Other' option manually if needed
+                                const otherOption = document.createElement("option");
+                                otherOption.value = 'Other';
+                                otherOption.textContent = 'Other';
+                                brandDropdown.appendChild(otherOption);
+                            }
+                        }
+                    );
+                }
+
+            </script>
+        </head>
+
+        <body onload="populateReasonOptions(); populateBrandDropdown();">
+            <apex:outputPanel id="containerPanel">
+
+                <apex:outputPanel id="mainPanel" rendered="{!NOT(isSubmitted)}">
+                    <div class="case-form">
+                        <h2>Submit a New Support Case</h2>
+                        <apex:form id="webToCaseForm" onsubmit="return validateBeforeSubmit();">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required="required" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required="required" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" pattern="^\d{10}$" required="required" title="Please enter a valid phone number with 10 digits only."/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="brand">Select Brand<span class="required">*</span></label>
+                                <select id="brand" name="Brand__c" required="required" onchange="populateProductDropdown()">
+                                </select>
+                                <span id="brandError" style="color:red; font-size:12px;"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="product">Select Product<span class="required">*</span></label>
+                                <select id="product" name="Raw_Product_Line__c" required="required" onchange="populateModelNo()">
+                                    <option value="" disabled="disabled" selected="selected">-- Select Product --</option>
+                                </select>
+                                <span id="productError" style="color:red; font-size:12px;"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="model">Select Model<span class="required">*</span></label>
+                                <select id="model" name="Raw_Model_Number__c" required="required">
+                                    <option value="" disabled="disabled" selected="selected">-- Select Model --</option>
+                                </select>
+                                <span id="modelError" style="color:red; font-size:12px;"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reason">Reason for Contact<span class="required">*</span></label>
+                                <select id="reason" name="Reason_for_Contact__c" required="required">
+                                    <option value="" disabled="disabled" selected="selected">-- Select Reason --</option>
+                                </select>
+                                <span id="reasonError" style="color:red; font-size:12px;"></span>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="subject">Issue Summary</label>
+                                <input type="text" id="subject" name="subject" required="required" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description">Detailed Issue Description</label>
+                                <textarea id="description" name="description" required="required"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                               <label for="fileInput" class="custom-upload-label">
+                                    Add Attachments (optional)
+                                <span class="tooltip-icon">ⓘ
+                                    <span class="tooltip-text">
+                                    You can attach multiple files like images or documents. Max 1GB each.
+                                    </span>
+                                </span>
+                                </label>
+                                <input type="file" id="fileInput" multiple="multiple" onchange="handleFiles(this.files)" class="custom-file-input" />
+                                <div id="fileList" style="margin-top: 10px;"></div>
+                                <div id="fileFieldsContainer"></div>
+                            </div>
+
+
+                            <apex:commandButton action="{!submitForm}" 
+                                                id="submitBtn"
+                                                value="Submit"
+                                                styleClass="btn-submit"
+                                                status="loaderStatus"
+                                                rerender="containerPanel"/>
+                        </apex:form>
+                    </div>
+                </apex:outputPanel>
+
+                <apex:outputPanel rendered="{!isSubmitted}">
+                    <div class="case-form" style="text-align:center;">
+                        <h2>Thank You!</h2>
+                        <p>Your case has been submitted successfully.</p>
+                        <p><strong>Ticket Number:</strong> {!createdCaseNumber}</p>
+                        <p>Our support team will contact you shortly.</p>
+                    </div>
+                </apex:outputPanel>
+
+            </apex:outputPanel>
+
+            <!-- Loader shown during form submission -->
+            <apex:actionStatus id="loaderStatus">
+                <apex:facet name="start">
+                    <div class="loader">
+                        <div class="spinner"></div>
+                    </div>
+                </apex:facet>
+                <apex:facet name="stop">
+                    <!-- Optionally add empty div or JS here -->
+                </apex:facet>
+            </apex:actionStatus>
+
+        </body>
+    </html>
+</apex:page>

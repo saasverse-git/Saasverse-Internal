@@ -1,0 +1,339 @@
+<apex:page showHeader="false" standardStylesheets="false" docType="html-5.0">
+    <html lang="en">
+        <head>
+            <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+            <script src="https://www.google.com/recaptcha/api.js"></script>
+           
+            <script>
+                // Keeps the reCAPTCHA timestamp fresh
+                function timestamp() {
+                var response = document.getElementById("g-recaptcha-response");
+                if (response == null || response.value.trim() == "") {
+                    var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+                    elems["ts"] = JSON.stringify(new Date().getTime());
+                    document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
+                }
+            }
+            setInterval(timestamp, 500); 
+            
+            document.getElementById('webToCaseForm').addEventListener('submit', function (e) {
+                console.log('webToCaseForm -> Submit');
+                var productSelect = document.getElementById('product');
+                if (productSelect && !productSelect.value) {
+                    alert('Please select a valid Product.');
+                    productSelect.focus();
+                    e.preventDefault(); // stop form submission
+                }
+                var reason = document.getElementById('reason');
+                if (!reason.value) {
+                    alert('Please select a valid Reason for Contact.');
+                    reason.focus();
+                    e.preventDefault(); // Prevent the form from submitting
+                }
+            });
+            
+            // Validates reCAPTCHA before form submission
+            function validateRecaptcha() {
+                var response = grecaptcha.getResponse();
+                if (response.length === 0) {
+                    alert("Please complete the reCAPTCHA.");
+                    return false;
+                }
+                return true;
+            }
+            function validatePicklist(id) {
+                let field = document.getElementById(id);
+                let errorSpan = document.getElementById(id + 'Error');
+                if (!field.value || field.value.includes('-- Select')) {
+                    field.style.border = '1px solid red';
+                    errorSpan.innerText = 'This field is required.';
+                } else {
+                    field.style.border = '';
+                    errorSpan.innerText = '';
+                }
+            }
+            
+            function validateBeforeSubmit() {
+                validatePicklist('product');
+                validatePicklist('model');
+                validatePicklist('reason');
+                validateRecaptcha();
+                
+                let hasError = ['product', 'model' ,'reason' ].some(id => {
+                    return document.getElementById(id + 'Error').innerText !== '';
+                });
+                
+                return !hasError;
+            }
+            
+            function showThankYouMessage() {
+                // You can also validate here if needed
+                document.getElementById("webToCaseForm").style.display = "none";
+                document.getElementById("thankYouMessage").style.display = "block";
+                return true; // Allows form submission
+            }
+            </script>
+            
+            <style>
+                body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+                background-color: #f8f8f8;
+                }
+                form {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                max-width: 500px;
+                margin: 0 auto;
+                }
+                label {
+                display: block;
+                margin-top: 10px;
+                font-weight: bold;
+                }
+                input[type="text"],
+                input[type="email"],
+                input[type="tel"],
+                textarea,
+                select {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                }
+                textarea {
+                height: 80px;
+                resize: vertical;
+                }
+                .required {
+                color: red;
+                margin-left: 5px;
+                }
+                input[type="submit"] {
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #0070d2;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                }
+                input[type="submit"]:hover {
+                background-color: #005bb5;
+                }
+                .g-recaptcha {
+                margin-top: 10px;
+                }
+                
+            </style>
+        </head>
+        <body>
+            <form id="webToCaseForm" action="http://httpbin.org/post" method="POST">     
+                
+                 <h2 style="text-align: center;">REMINGTON</h2>
+                <input type="hidden" name="orgid" value="00DOx00000GJGr3"/>
+                <input type="hidden" name="retURL" value="https://tristarproductsinc--spctmfull.sandbox.my.salesforce-sites.com/createCase" />
+                
+                
+                <label for="name">Name<span class="required">*</span></label>
+                <input id="name" name="name" maxlength="80" type="text" required = "required"/>
+                
+                <label for="email">Email<span class="required">*</span></label>
+                <input id="email" name="email" maxlength="80" type="email" required = "required"/>
+                
+                <label for="phone">Phone<span class="required">*</span></label>
+                <input id="phone" name="phone" maxlength="40" type="tel" pattern="^\+?[0-9]{7,15}$" title="Please enter a valid phone number with digits only. You can include a + at the beginning." required = "required"/>
+                
+                <label for="product">Select Product<span class="required">*</span></label>
+                <select id="product" name="Raw_Product_Line__c" required="required" onchange="updateModels()">
+                    <option value=""  selected="selected" hidden="hidden" >-- Select Product --</option>
+                    <option value="Product Not Listed">Product not Listed</option>
+                    <option value="Air-Styler">Air-Styler</option>
+                    <option value="Bikini Trimmer">Bikini Trimmer</option>
+                    <option value="Body Groomer">Body Groomer</option>
+                    <option value="Brushes">Brushes</option>
+                    <option value="Curling Iron">Curling Iron</option>
+                    <option value="Detail Trimmer">Detail Trimmer</option>
+                    <option value="Dryer">Dryer</option>
+                    <option value="Dual Foil">Dual Foil</option>
+                    <option value="Epilator">Epilator</option>
+                    <option value="Facial Brush">Facial Brush</option>
+                    <option value="Foil">Foil</option>
+                    <option value="Hair Clipper">Hair Clipper</option>
+                    <option value="Haircare Accessories">Haircare Accessories</option>
+                    <option value="Manicure">Manicure</option>
+                    <option value="Mens Foil Replacement">Mens Foil Replacement</option>
+                    <option value="Mens Rotary Replacement">Mens Rotary Replacement</option>
+                    <option value="Mustache / Beard Trimmer">Mustache / Beard Trimmer</option>
+                    <option value="Nose / Ear Trimmer">Nose / Ear Trimmer</option>
+                    <option value="Personal Groomer">Personal Groomer</option>
+                    <option value="Power Adapter">Power Adapter</option>
+                    <option value="Rotary Shavers">Rotary Shavers</option>
+                    <option value="Setter">Setter</option>
+                    <option value="Single Foil">Single Foil</option>
+                    <option value="Specialty">Specialty</option>
+                    <option value="Straightener">Straightener</option>
+                    <option value="Womens Foil Replacement">Womens Foil Replacement</option>
+                </select>
+                <span id="productError" style="color:red; font-size:12px;"></span>
+                
+                <label for="model">Model<span class="required">*</span></label>
+                <select id="model" name="Raw_Model_Number__c" required = "required">
+                    <option value="" disabled="disabled" selected="selected">-- Select Model --</option>
+                </select>
+                <span id="modelError" style="color:red; font-size:12px;"></span>
+                
+                <label for="subject">Subject<span class="required">*</span></label>
+                <input id="subject" name="subject" maxlength="80" type="text" required = "required"/>
+                
+                <label for="description">Description<span class="required">*</span></label>
+                <textarea name="description" required = "required"></textarea>
+                
+                <label for="reason">Reason for Contact<span class="required">*</span></label>
+                <select id="reason" name="custom_reason_for_contact__c" required="required" >
+                    <option value="" selected="selected" hidden="hidden">-- Select Reason for Contact --</option><option value="Address Change">Address Change</option>
+                    <!-- <option value="Arbitration">Arbitration</option> -->
+                    <!-- <option value="Billing - Change cc">Billing - Change cc</option> -->
+                    <!-- <option value="Billing - Change payment date">Billing - Change payment date</option> -->
+                    <option value="Billing Inquiry Other">Billing Inquiry Other</option>
+                    <option value="Billing Inquiry Payment">Billing Inquiry Payment</option>
+                    <!-- <option value="Billing Inquiry Preauth">Billing Inquiry Preauth</option> -->
+                    <!-- <option value="Billing - Refund Reject">Billing - Refund Reject</option> -->
+                    <!-- <option value="Chargeback">Chargeback</option> -->
+                    <!-- <option value="Class_Action_Lawsuit">Class_Action_Lawsuit</option> -->
+                    <!-- <option value="Cm misunderstood offer">Cm misunderstood offer</option> -->
+                    <!-- <option value="Collections">CollectionComplaint - Advertisings</option> -->
+                    <!-- <option value="Complaint - Advertising">Complaint - Advertising</option> -->
+                    <option value="Complaint - Customer Service">Complaint - Customer Service</option>
+                    <!-- <option value="Complaint - Sales Process">Complaint - Sales Process</option> -->
+                    <!-- <option value="Complaint - Website">Complaint - Website</option> -->
+                    <option value="Compliment - Customer Service">Compliment - Customer Service</option>
+                    <!-- <option value="Damaged Unit">Damaged Unit</option> -->
+                    <!-- <option value="Donation Request">Donation Request</option> -->
+                    <option value="Duplicate Order/Shipment">Duplicate Order/Shipment</option>
+                    <!-- <option value="Fraud Credit Card">Fraud Credit Card</option> -->
+                    <!-- <option value="Fraud Order">Fraud Order</option> -->
+                    <!-- <option value="Grocery Coupons">Grocery Coupons</option> -->
+                    <option value="Inquiry">Inquiry</option>
+                    <!-- <option value="Invoice">Invoice</option> -->
+                    <!-- <option value="Legal">Legal</option> -->
+                    <!-- <option value="LifeTime_Warranty">LifeTime_Warranty</option> -->
+                    <!-- <option value="Mailed in Payment_Missing order">Mailed in Payment_Missing order</option> -->
+                    <!-- <option value="Not a Spectrum Product">Not a Spectrum Product</option> -->
+                    <!-- <option value="Not Tristar Product">Not Tristar Product</option> -->
+                    <!-- <option value="Opt Out Data">Opt Out Data</option> -->
+                    <!-- <option value="Opt Out Email">Opt Out Email</option> -->
+                    <option value="Order">Order</option>
+                    <option value="Order Status">Order Status</option>
+                    <option value="Order Cancellation">Order Cancellation</option>
+                    <!-- <option value="Order Challenge">Order Challenge</option> -->
+                    <!-- <option value="Order - cm no longer wants">Order - cm no longer wants</option> -->
+                    <option value="Order Incorrect Item Received">Order Incorrect Item Received</option>
+                    <option value="Order Non Delivery">Order Non Delivery</option>
+                    <!-- <option value="Order - Price Dispute">Order - Price Dispute</option> -->
+                    <!-- <option value="Order - Price Match">Order - Price Match</option> -->
+                    <option value="Other">Other</option>
+                    <option value="Parts-broken (upon arrival)">Parts-broken (upon arrival)</option>
+                    <option value="Parts-missing/incomplete">Parts-missing/incomplete</option>
+                    <option value="Parts-Order">Parts-Order</option>
+                    <!-- <option value="Parts-Redemption">Parts-Redemption</option> -->
+                    <option value="Injury">Injury</option>
+                    <option value="Property Damage">Property Damage</option>
+                    <option value="PIR">PIR</option>
+                    <option value="Product Issue">Product Issue</option>
+                    <!-- <option value="Product Issue - Results">Product Issue - Results</option> -->
+                    <option value="Product - MBG/Guarantee">Product - MBG/Guarantee</option>
+                    <option value="Product Question">Product Question</option>
+                    <!-- <option value="Product Question - How to Use">Product Question - How to Use</option> -->
+                    <!-- <option value="Product Exchange">Product Exchange</option> -->
+                    <option value="Product Idea">Product Idea</option>
+                    <!-- <option value="Product Inventor">Product Inventor</option> -->
+                    <option value="Product Registration">Product Registration</option>
+                    <option value="Recall">Recall</option>
+                    <option value="Recipe Issue">Recipe Issue</option>
+                    <option value="Return not processed">Return not processed</option>
+                    <!-- <option value="Review">Review</option> -->
+                    <!-- <option value="Sales Retail Query">Sales Retail Query</option> -->
+                    <!-- <option value="Sales Wholesale query">Sales Wholesale query</option> -->
+                    <!-- <option value="Shipping Claim">Shipping Claim</option> -->
+                    <!-- <option value="Solicitation">Solicitation</option> -->
+                    <!-- <option value="Spam">Spam</option> -->
+                    <!-- <option value="Tax Calculation">Tax Calculation</option> -->
+                    <!-- <option value="Third_Party_Product_Issue">Third_Party_Product_Issue</option> -->
+                    <!-- <option value="Trademark">Trademark</option> -->
+                </select>
+                <span id="reasonError" style="color:red; font-size:12px;"></span>
+                
+                <input type="hidden" value="Remington Products" id="Brand" name="Brand__c" />
+                
+                <div class="g-recaptcha" data-sitekey="6LdcNlorAAAAAP4Wx49BmnqYdydYFYTyihI40ti0"></div>
+                <input type="submit" name="submit" value="Submit" onclick="return validateBeforeSubmit();" />
+                
+                <script>
+                const modelMap = {
+                    "Product Not Listed": ["Model not Listed","Product not Available"],
+                    "Air-Styler": ["Model not Listed", "AS8090", "AS800", "CB7A138", "AS15A10", "AS8606", "AS14A10"],
+                    "Bikini Trimmer": ["Model not Listed", "BKT4000", "MPT5000", "WPG4020B", "WPG4020US"],
+                    "Body Groomer": ["Model not Listed", "BHT250", "BHT300", "BHT600", "BHT6455", "BHT6450"],
+                    "Brushes": ["Model not Listed", "B60GM", "B60GV", "B70M"],
+                    "Curling Iron": ["Model not Listed", "CI11A25", "CI41T1", "CI5225", "CI5232", "CI52W1", "CI606", "CI7A725", "CI8019", "CI8125", "CI8A931", "CI8A932", "CI9119S", "CI91W", "CI9538", "CI96X1", "CI95AC5", "CI9540", "CI6325", "CI56W0", "CI5019", "CI96W2", "CI9525CL", "CI9625CL", "CI5025", "CI9626CL", "CI19A10", "CI50M1", "CI19A10", "CI5032", "CI9538", "CI52W1TA", "CI95AC2", "CI5338", "CI50M2", "CI50M", "CI52W2", "CI9541", "CI12A10"],
+                    "Detail Trimmer": ["Model not Listed", "MPT3400", "MPT3500", "MPT3600", "MPT3800"],
+                    "Dryer": ["Model not Listed", "AC2015", "AC8A630", "AC9007", "AC9140", "AC9140S", "AC9142", "D2042", "D2045", "D3015", "D3080", "D3190", "D4100", "D4122", "D4200", "D4322", "D5000", "D5950", "D5951", "D5952", "D7777", "D2121", "AC5999", "AC6120", "D5216", "S4A500", "D3017", "AC9096", "DC1875", "D3710", "D3200", "D5000", "AC8A630", "D5700", "D18A", "AC9097", "D2009", "D5001COM", "AC2015", "D8700", "D20A10", "D3190", "AC2016", "D5006", "D5005", "D5005", "D3020", "D2130", "D3193", "EC9001", "D1880S", "D30A", "EC9001A", "D3191", "D4000", "SSD500", "V-1000", "D2405", "D31A10"],
+                    "Dual Foil": ["Model not Listed", "WDF4815", "WDF4821", "WDF5030", "WDF4821BCDN", "WDF1250", "WDF4820"],
+                    "Epilator": ["Model not Listed", "EP7010", "EP7030", "EP1050", "EP7010GCDN"],
+                    "Facial Brush": ["Model not Listed", "FC1000", "FC1500", "FC500"],
+                    "Foil": ["Model not Listed", "F3800", "F5800", "HF9000", "PF7200", "PF7300", "PF7400", "PF7500", "PF7600", "F0050", "XF8505", "SF4880", "TF70", "F3900", "HF9100", "PF7400D", "PF7400", "F5800", "PF7300", "PF7300B", "XF5000", "XF8550", "PF7855", "PF7400", "PF7580", "HF9000", "PF7320", "F3790", "F4010", "PF7320", "PF7400F", "F3010", "MS2 370", "PF7855"],
+                    "Hair Clipper": ["Model not Listed", "HC5030", "HC2000", "HC1050", "HC1080", "HC1090", "HC1095", "HC4240", "HC4250", "HC5015", "HC5031", "HC5850", "HC5855", "HC5870", "HC60", "HC6550", "HC80", "HC822", "HC9700", "HC335", "HC07A", "HC5150", "HKVAC2000", "HC1094", "HC3160", "HC5081", "HC7110", "HC9000", "HC81", "HC5080", "HC1085"],
+                    "Haircare Accessories": ["Model not Listed", "CWX1W1A", "E20T17", "GCW18T3B", "GHB1T47", "SC4T3", "ST1W1A"],
+                    "Manicure": ["Model not Listed", "MAN3000"],
+                    "Mens Foil Replacement": ["Model not Listed", "SP290", "SP390", "SP62", "SPF200", "SPF300", "SP69", "SP94"],
+                    "Mens Rotary Replacement": ["Model not Listed", "SPR", "SP19", "SPR-PR13"],
+                    "Mustache / Beard Trimmer": ["Model not Listed", "MB4200", "MB320", "MB4045", "MB040", "MB060", "MB20", "MB2500", "MB4040", "MB4700", "MB4900", "MB6850", "MB051", "MB320C", "MB200", "MB4045", "MB4850"],
+                    "Nose / Ear Trimmer": ["Model not Listed", "NE3200", "NE3250", "NE3560", "NE3150", "NE3875", "NE3871", "NE3845", "NE3160"],
+                    "Personal Groomer": ["Model not Listed", "MPT3400C", "MPT4000", "WPG4060", "PG180", "PG350", "PG517", "PG525", "PG6015", "PG6017", "PG6024", "PG6025", "PG6027", "PG6110", "PG6135", "PG6137", "PG6145", "PG6155", "PG6157", "PG6170", "PG6171", "PG6250", "PG6255", "PG6855", "VPG6530", "WPG4020", "WPG4050", "PG181", "PG6160", "PG6130", "PG6025", "PG6020", "PG6015", "PG6023", "PG350", "WPG4110", "PG6154", "PG6025", "WPG4200", "PG3150", "PG6111", "PG181", "PG165", "PG350", "PG6255", "PG3160", "RG030A", "WPG4025", "WPG4050", "PG6251", "PG6024", "WPG4050", "WPG4060", "PG6856", "PG3000", "PG526", "PG8000", "PG517"],
+                    "Power Adapter": ["Model not Listed", "SW-040010A"],
+                    "Rotary Shavers": ["Model not Listed", "PR1230", "PR1235", "PR1240", "PR1260", "PR1285", "PR1335", "PR1337", "PR1340", "PR1362", "PR1385", "R0050", "R2-405", "R405", "R4150", "R5150", "R95", "XR1370", "XR1410", "XR1430", "XR1450", "XR1470", "R4110", "PR1362", "R405", "R405", "PR1362B", "PR1855", "R5130", "XR7000", "XR7000CDN", "PR1320", "R405", "R950", "XR7100", "XR7120", "XR7200", "R3010"],
+                    "Setter": ["Model not Listed", "H5600", "H9100", "H5670", "H1015", "H1016", "H9101", "H9102", "H9096", "H2050", "H1012", "H9000", "H2020", "H9103", "H1018", "H9350US"],
+                    "Single Foil": ["Model not Listed", "WSF4810", "WSF5050", "WDF4810", "WDF4821US", "WSF4810"],
+                    "Specialty": ["Model not Listed", "RTFS2", "81626"],
+                    "Straightener": ["Model not Listed", 
+                                     "CB7400", "DT7432", "S9510", "S9530", "S1005", "S1322", "S5500", "S5520",
+                                     "S6500", "S6600", "S7280", "S7310", "S7330", "S7740", "S8590", "S8599",
+                                     "S9110", "S9112", "S9130", "S9132", "S9500", "S9520", "S9600", "S9610",
+                                     "S9620", "S9630", "S9632", "S8598", "S2412", "CB7401", "S7710", "S7300",
+                                     "S9100", "S5505", "S16A", "S9960", "S8670", "s7412", "S1302", "S16A10",
+                                     "CB7480S", "S8A900", "S3570", "S16A11", "S6501", "S2880", "S7901", "S25A10",
+                                     "S8510", "S6501", "S9001", "S6500", "S2410", "S1520", "S3500", "S8001", "S9531", "S7311",
+                                     "S9511", "S5502", "S1600", "S8005", "S33A10", "S7231", "S24A10", "S5522",
+                                     "S7900", "S8000", "CB7403"
+                                    ],
+                    "Womens Foil Replacement": ["Model not Listed", "SPW440", "SPW480"]
+                };
+                
+                function updateModels() {
+                    const product = document.getElementById("product").value;
+                    const modelSelect = document.getElementById("model");
+                    modelSelect.innerHTML = '<option value="">-- Select Model --</option>';
+                    
+                    if (modelMap[product]) {
+                        modelMap[product].forEach(function(model) {
+                            const option = document.createElement("option");
+                            option.value = model;
+                            option.text = model;
+                            modelSelect.appendChild(option);
+                        });
+                    }
+                }
+                </script>
+                
+            </form>
+            <div id="thankYouMessage" style="display: none; text-align: center; font-weight: bold; margin-top: 20px;">
+                Thank you for submitting your request!
+            </div>
+        </body>
+    </html>
+</apex:page>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Keyword Config</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Keyword Configs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Case Origin --></label>
+        <name>Case_Origin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Priority --></label>
+        <name>Case_Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Record Type --></label>
+        <name>Case_Record_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Keyword --></label>
+        <name>Keyword__c</name>
+    </fields>
+    <fields>
+        <label><!-- Routing_Queue_Name --></label>
+        <name>Routing_Queue_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support_Email --></label>
+        <name>Support_Email__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
