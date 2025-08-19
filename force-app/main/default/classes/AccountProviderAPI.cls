@@ -4,4 +4,5 @@ global class AccountProviderAPI {
     global static List<Account> getAllAccounts(){
         return [select Id, Name from Account LIMIT 5];
     }
+//from git
 }
