@@ -1,5 +1,0 @@
-<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global" >
-	<lightning:utilityBarAPI aura:id="utilitybar"/>
-
-    <c:knowledgeArticleSearchBox aura:id="myLwc" onopenutility="{!c.handleOpenUtility }" oncallauramethod="{!c.handleCall}"/>
-</aura:component>
